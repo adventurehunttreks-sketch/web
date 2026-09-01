@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Hunt Treks Pvt. Ltd. - Nepal Tours</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Adventure Hunt Treks" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Currency Selection Modal -->
+    <div class="modal-overlay" id="originModal">
+        <div class="modal">
+            <div class="modal-logo">
+                <img src="logo.png" alt="Adventure Hunt Treks">
+            </div>
+            <div class="modal-header">
+                <h2>Welcome to Adventure Hunt Treks</h2>
+                <p>Choose your preferred currency to view prices</p>
+            </div>
+            <div class="modal-cards">
+                <div class="origin-card nepal-card" onclick="selectOrigin('nepal', this)">
+                    <div class="origin-icon">🇳🇵</div>
+                    <h3>NPR</h3>
+                    <p>View prices in Nepali Rupees</p>
+                </div>
+                <div class="origin-card foreign-card" onclick="selectOrigin('foreign', this)">
+                    <div class="origin-icon">💵</div>
+                    <h3>USD</h3>
+                    <p>View prices in US Dollars</p>
+                </div>
+            </div>
+            <button class="skip-btn" onclick="skipSelection()">Skip & See All Packages</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Adventure Awaits in Nepal</h1>
+            <p>Your trusted partner for treks, tours & wildlife adventures</p>
+            <div class="hero-buttons">
+                <a href="#packages" class="btn btn-primary">Explore Packages</a>
+                <a href="#contact" class="btn btn-secondary">Plan Your Trip</a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <a href="#stats" class="hero-scroll"><i class="fas fa-chevron-down"></i></a>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="stat-item">
+            <i class="fas fa-mountain"></i>
+            <h3>20+</h3>
+            <p>Trek Routes</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <h3>10,000+</h3>
+            <p>Happy Travelers</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-star"></i>
+            <h3>4.9/5</h3>
+            <p>Customer Rating</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-shield-alt"></i>
+            <h3>100%</h3>
+            <p>Safety Record</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Adventure Hunt Treks</h2>
+                    <p>Adventure Hunt Treks Pvt. Ltd. is a government-registered trekking and tour operator based in Suryabinayak, Bhaktapur, Nepal. We specialize in providing unforgettable adventure experiences across Nepal, from the majestic Himalayas to the lush jungles of Chitwan.</p>
+                    <p>Whether you're a Nepali looking to explore your own country or a foreign visitor discovering Nepal for the first time, we have the perfect package for you.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-id-card"></i>
+                            <div>
+                                <h4>Government Licensed</h4>
+                                <p>Registered with Nepal Tourism Board</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>
+                                <h4>Expert Local Guides</h4>
+                                <p>Experienced & certified guides</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <div>
+                                <h4>Best Price Guarantee</h4>
+                                <p>Competitive prices, no hidden fees</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-headset"></i>
+                            <div>
+                                <h4>24/7 Support</h4>
+                                <p>Round-the-clock assistance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-contact-card">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Suryabinayak, Bhaktapur, Nepal</p>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+977-9851134076</p>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>adventurehunttreks@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Packages Section -->
+    <section class="itinerary-section" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Tour Packages</h2>
+                <p>Choose from our curated Nepal experiences</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All Packages</button>
+                <button class="filter-btn" data-filter="chitwan">🌿 Chitwan</button>
+                <button class="filter-btn" data-filter="pokhara">🏔️ Pokhara</button>
+                <button class="filter-btn" data-filter="kathmandu">🏛️ Heritage</button>
+                <button class="filter-btn" data-filter="trek">🥾 Trekking</button>
+                <button class="filter-btn" data-filter="adventure">🎯 Adventure</button>
+                <button class="filter-btn" data-filter="combo">⭐ Combo</button>
+            </div>
+
+            <!-- Price Toggle -->
+            <div class="price-toggle">
+                <span class="toggle-label" id="npr-label">🇳🇵 NPR</span>
+                <label class="switch">
+                    <input type="checkbox" id="priceToggle" onchange="togglePrice()">
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label" id="usd-label">🇺🇸 USD</span>
+            </div>
+
+            <div class="packages-grid" id="packages-grid">
+
+                <!-- Chitwan Adventure Tour -->
+                <div class="package-card" data-category="chitwan">
+                    <div class="package-image" style="background: url('chitwan.jpg') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Popular</div>
+                        <button class="itinerary-btn" onclick="openItinerary('chitwan-adventure')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Chitwan Adventure Tour</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 2N / 3D</span>
+                            <span><i class="fas fa-users"></i> 2+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> All Meals (B/L/D)</li>
+                            <li><i class="fas fa-check"></i> Jungle Safari</li>
+                            <li><i class="fas fa-check"></i> Canoe Ride</li>
+                            <li><i class="fas fa-check"></i> Tharu Cultural Dance</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 12,500</span>
+                            <span class="price usd-price" style="display:none;">$95</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Chitwan Wildlife Tour -->
+                <div class="package-card" data-category="chitwan">
+                    <div class="package-image" style="background: url('chitwan.jpg') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Wildlife</div>
+                        <button class="itinerary-btn" onclick="openItinerary('chitwan-wildlife')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Chitwan Wildlife Tour</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 2N / 3D</span>
+                            <span><i class="fas fa-users"></i> 2+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> 4x4 Jeep Safari</li>
+                            <li><i class="fas fa-check"></i> Jungle Walk</li>
+                            <li><i class="fas fa-check"></i> Elephant Breeding Center</li>
+                            <li><i class="fas fa-check"></i> Bird Watching</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 12,500</span>
+                            <span class="price usd-price" style="display:none;">$95</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Jungle Safari Tour -->
+                <div class="package-card" data-category="chitwan">
+                    <div class="package-image" style="background: url('chitwan.jpg') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Safari</div>
+                        <button class="itinerary-btn" onclick="openItinerary('jungle-safari')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Jungle Safari Tour</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 2N / 3D</span>
+                            <span><i class="fas fa-users"></i> 2+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Elephant Safari</li>
+                            <li><i class="fas fa-check"></i> Canoe Ride</li>
+                            <li><i class="fas fa-check"></i> Jungle Walk</li>
+                            <li><i class="fas fa-check"></i> Cultural Program</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 12,500</span>
+                            <span class="price usd-price" style="display:none;">$95</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Chitwan Lumbini Tour -->
+                <div class="package-card" data-category="chitwan">
+                    <div class="package-image" style="background: url('chitwan.jpg') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Combo</div>
+                        <button class="itinerary-btn" onclick="openItinerary('chitwan-lumbini')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Chitwan Lumbini Tour</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 3N / 4D</span>
+                            <span><i class="fas fa-users"></i> 2+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Jungle Safari</li>
+                            <li><i class="fas fa-check"></i> Lumbini Sightseeing</li>
+                            <li><i class="fas fa-check"></i> All Transport</li>
+                            <li><i class="fas fa-check"></i> All Meals</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 19,000</span>
+                            <span class="price usd-price" style="display:none;">$145</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Pokhara Adventure -->
+                <div class="package-card" data-category="pokhara">
+                    <div class="package-image" style="background: url('pokhara.jpg') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Adventure</div>
+                        <button class="itinerary-btn" onclick="openItinerary('pokhara-adventure')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Pokhara Adventure</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 2N / 3D</span>
+                            <span><i class="fas fa-users"></i> 2+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Paragliding</li>
+                            <li><i class="fas fa-check"></i> Sarangkot Sunrise</li>
+                            <li><i class="fas fa-check"></i> Phewa Lake Boating</li>
+                            <li><i class="fas fa-check"></i> Davis Falls</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 15,999</span>
+                            <span class="price usd-price" style="display:none;">$120</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Kathmandu Heritage Tour -->
+                <div class="package-card" data-category="kathmandu">
+                    <div class="package-image" style="background: url('ghandruk.png') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Heritage</div>
+                        <button class="itinerary-btn" onclick="openItinerary('kathmandu-heritage')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Kathmandu Heritage Tour</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 1N / 2D</span>
+                            <span><i class="fas fa-users"></i> 2+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Pashupatinath Temple</li>
+                            <li><i class="fas fa-check"></i> Boudhanath Stupa</li>
+                            <li><i class="fas fa-check"></i> Swayambhunath</li>
+                            <li><i class="fas fa-check"></i> Durbar Square</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 6,999</span>
+                            <span class="price usd-price" style="display:none;">$55</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Lumbini Tour -->
+                <div class="package-card" data-category="kathmandu">
+                    <div class="package-image" style="background: url('ghandruk.png') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Spiritual</div>
+                        <button class="itinerary-btn" onclick="openItinerary('lumbini-tour')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Lumbini Tour</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 1N / 2D</span>
+                            <span><i class="fas fa-users"></i> 2+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Mayadevi Temple</li>
+                            <li><i class="fas fa-check"></i> World Peace Pagoda</li>
+                            <li><i class="fas fa-check"></i> Monastery Visit</li>
+                            <li><i class="fas fa-check"></i> All Meals</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 7,500</span>
+                            <span class="price usd-price" style="display:none;">$58</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Muktinath Pilgrimage -->
+                <div class="package-card" data-category="trek">
+                    <div class="package-image" style="background: url('muktinath.png') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Pilgrimage</div>
+                        <button class="itinerary-btn" onclick="openItinerary('muktinath')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Muktinath Pilgrimage</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 4N / 5D</span>
+                            <span><i class="fas fa-users"></i> 2+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Jomsom Flight</li>
+                            <li><i class="fas fa-check"></i> Muktinath Temple</li>
+                            <li><i class="fas fa-check"></i> Kagbeni Village</li>
+                            <li><i class="fas fa-check"></i> All Transport</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 32,999</span>
+                            <span class="price usd-price" style="display:none;">$250</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Poon Hill Trek -->
+                <div class="package-card" data-category="trek">
+                    <div class="package-image" style="background: url('ghandruk.png') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Sunrise</div>
+                        <button class="itinerary-btn" onclick="openItinerary('poonhill')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Poon Hill Trek</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 4N / 5D</span>
+                            <span><i class="fas fa-users"></i> 2+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Poon Hill Sunrise</li>
+                            <li><i class="fas fa-check"></i> Ghandruk Village</li>
+                            <li><i class="fas fa-check"></i> Guide & Porter</li>
+                            <li><i class="fas fa-check"></i> All Meals</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 22,999</span>
+                            <span class="price usd-price" style="display:none;">$175</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Langtang Valley Trek -->
+                <div class="package-card" data-category="trek">
+                    <div class="package-image" style="background: url('annapurna.jpg') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Trekking</div>
+                        <button class="itinerary-btn" onclick="openItinerary('langtang')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Langtang Valley Trek</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 6N / 7D</span>
+                            <span><i class="fas fa-users"></i> 4+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> All Meals</li>
+                            <li><i class="fas fa-check"></i> Guide & Porter</li>
+                            <li><i class="fas fa-check"></i> Permit Fees</li>
+                            <li><i class="fas fa-check"></i> Accommodation</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 28,999</span>
+                            <span class="price usd-price" style="display:none;">$220</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Annapurna Base Camp -->
+                <div class="package-card" data-category="trek">
+                    <div class="package-image" style="background: url('annapurna.jpg') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Classic</div>
+                        <button class="itinerary-btn" onclick="openItinerary('annapurna')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Annapurna Base Camp</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 10N / 11D</span>
+                            <span><i class="fas fa-users"></i> 2+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> ABC Trek</li>
+                            <li><i class="fas fa-check"></i> Hot Springs</li>
+                            <li><i class="fas fa-check"></i> Guide & Porter</li>
+                            <li><i class="fas fa-check"></i> All Meals</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 45,000</span>
+                            <span class="price usd-price" style="display:none;">$340</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Upper Mustang -->
+                <div class="package-card" data-category="adventure">
+                    <div class="package-image" style="background: url('mustang.png') center/cover;">
+                        <div class="package-overlay"></div>
+                        <div class="package-badge">Restricted</div>
+                        <button class="itinerary-btn" onclick="openItinerary('mustang')">
+                            <i class="fas fa-map"></i> View Itinerary
+                        </button>
+                    </div>
+                    <div class="package-content">
+                        <h3>Upper Mustang Tour</h3>
+                        <div class="package-details">
+                            <span><i class="fas fa-clock"></i> 4N / 5D</span>
+                            <span><i class="fas fa-users"></i> 2+ People</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Restricted Area Permit</li>
+                            <li><i class="fas fa-check"></i> Lo Manthang</li>
+                            <li><i class="fas fa-check"></i> Muktinath Darshan</li>
+                            <li><i class="fas fa-check"></i> 4WD Jeep Adventure</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price npr-price">NPR 35,000</span>
+                            <span class="price usd-price" style="display:none;">$270</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <button class="btn btn-primary btn-block book-btn">Book Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Destinations</h2>
+                <p>Explore the most beautiful places in Nepal</p>
+            </div>
+            <div class="destinations-grid" id="destinations-grid">
+                <div class="destination-card" style="background: url('chitwan.jpg') center/cover;">
+                    <div class="dest-overlay"></div>
+                    <div class="dest-content">
+                        <h3>Chitwan</h3>
+                        <p>Wildlife & Jungle Safari</p>
+                    </div>
+                </div>
+                <div class="destination-card" style="background: url('pokhara-lake.jpg') center/cover;">
+                    <div class="dest-overlay"></div>
+                    <div class="dest-content">
+                        <h3>Pokhara</h3>
+                        <p>Lakes & Mountain Views</p>
+                    </div>
+                </div>
+                <div class="destination-card" style="background: url('ghandruk-village.png') center/cover;">
+                    <div class="dest-overlay"></div>
+                    <div class="dest-content">
+                        <h3>Ghandruk</h3>
+                        <p>Gurung Village Trek</p>
+                    </div>
+                </div>
+                <div class="destination-card" style="background: url('abc-trek.jpg') center/cover;">
+                    <div class="dest-overlay"></div>
+                    <div class="dest-content">
+                        <h3>Annapurna Base Camp</h3>
+                        <p>Base Camp Trek</p>
+                    </div>
+                </div>
+                <div class="destination-card" style="background: url('muktinath-temple.png') center/cover;">
+                    <div class="dest-overlay"></div>
+                    <div class="dest-content">
+                        <h3>Muktinath</h3>
+                        <p>Sacred Pilgrimage</p>
+                    </div>
+                </div>
+                <div class="destination-card" style="background: url('upper-mustang.png') center/cover;">
+                    <div class="dest-overlay"></div>
+                    <div class="dest-content">
+                        <h3>Upper Mustang</h3>
+                        <p>Forbidden Kingdom</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax CTA -->
+    <section class="parallax-cta">
+        <div class="parallax-cta-bg" style="background-image: url('pokhara-paragliding.jpg');"></div>
+        <div class="parallax-cta-overlay"></div>
+        <div class="parallax-cta-content">
+            <h2>Ready for the Adventure of a Lifetime?</h2>
+            <p>Join thousands of happy travelers who explored Nepal with us</p>
+            <a href="#contact" class="btn btn-primary">Start Planning</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Plan Your Adventure</h2>
+                <p>Get in touch with us for customized itineraries</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="Enter your phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="visitor-type">Are you from Nepal?</label>
+                                <select id="visitor-type">
+                                    <option value="">Select</option>
+                                    <option value="nepal">Yes, I'm from Nepal</option>
+                                    <option value="foreign">No, I'm visiting Nepal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="package">Interested Package</label>
+                            <select id="package">
+                                <option value="">Select a package</option>
+                                <option value="chitwan-adventure">Chitwan Adventure Tour</option>
+                                <option value="chitwan-wildlife">Chitwan Wildlife Tour (1N/2D)</option>
+                                <option value="chitwan-adventure">Chitwan & CG Dham Tour (2N/3D)</option>
+                                <option value="chitwan-lumbini">Pokhara, Lumbini & Chitwan (4N/5D)</option>
+                                <option value="janakpur-chitwan">Janakpur & Chitwan Tour (2N/3D)</option>
+                                <option value="lumbini-chitwan">Lumbini & Chitwan Tour (2N/3D)</option>
+                                <option value="pokhara-ghandruk">Pokhara Ghandruk Tour (2N/3D)</option>
+                                <option value="sikles">Sikles Village Trek (3N/4D)</option>
+                                <option value="chitlang">Chitlang Village Tour (1N/2D)</option>
+                                <option value="suping-chitlang">Suping Chitlang Tour (2N/3D)</option>
+                                <option value="kathmandu-heritage">Sailung Kalinchowk Tour (2N/3D)</option>
+                                <option value="annapurna">Annapurna Base Camp (6N/7D)</option>
+                                <option value="poonhill">Ghorepani Poonhill Trek (4N/5D)</option>
+                                <option value="poonhill-ghandruk">Poonhill Ghandruk Trek (5N/6D)</option>
+                                <option value="dhampus">Dhampus Australian Camp (2N/3D)</option>
+                                <option value="australian-camp">Australian Camp Trek (3N/4D)</option>
+                                <option value="ghandruk">Ghandruk Village Trek (3N/4D)</option>
+                                <option value="manang">Manang Tour (3N/4D)</option>
+                                <option value="manang-extended">Manang Extended Tour (4N/5D)</option>
+                                <option value="muktinath">Muktinath Tour (3N/4D)</option>
+                                <option value="muktinath-extended">Muktinath Pilgrimage (4N/5D)</option>
+                                <option value="pathibhara">Pathibhara Pilgrimage (5N/6D)</option>
+                                <option value="rara-lake">Rara Lake Tour (6N/7D)</option>
+                                <option value="mustang">Upper Mustang Tour (4N/5D)</option>
+                                <option value="mustang-extended">Upper Mustang Extended (5N/6D)</option>
+                                <option value="custom">Customized Tour</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date</label>
+                                <input type="date" id="date">
+                            </div>
+                            <div class="form-group">
+                                <label for="people">Number of People</label>
+                                <input type="number" id="people" min="1" max="50" placeholder="Enter number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Special Requirements</label>
+                            <textarea id="message" rows="4" placeholder="Any special requests or requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>Get In Touch</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Suryabinayak, Bhaktapur, Nepal</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+977-9851134076</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>adventurehunttreks@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Sun - Fri: 9 AM - 6 PM</p>
+                                <p>Sat: 10 AM - 4 PM</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="logo.png" alt="Adventure Hunt Treks" class="footer-logo">
+                    <p>Your trusted partner for treks, tours & wildlife adventures in Nepal.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Chitwan Tours</h4>
+                    <ul>
+                        <li><a href="#packages">Chitwan Adventure</a></li>
+                        <li><a href="#packages">Jungle Safari</a></li>
+                        <li><a href="#packages">Chitwan Lumbini</a></li>
+                        <li><a href="#packages">Pokhara Chitwan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Trekking</h4>
+                    <ul>
+                        <li><a href="#packages">Poon Hill Trek</a></li>
+                        <li><a href="#packages">Annapurna Base Camp</a></li>
+                        <li><a href="#packages">Langtang Valley</a></li>
+                        <li><a href="#packages">Upper Mustang</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="footerCopyright" style="cursor:default; user-select:none;">&copy; 2026 Adventure Hunt Treks Pvt. Ltd. All Rights Reserved.</p>
+                <p>Suryabinayak, Bhaktapur, Nepal | +977-9851134076 | adventurehunttreks@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal" style="display:none;">
+        <div class="modal booking-modal">
+            <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            <div class="booking-modal-content">
+                <div class="booking-form-view" id="bookingFormView">
+                    <div class="booking-form-header">
+                        <i class="fas fa-paper-plane"></i>
+                        <h3>Book This Tour</h3>
+                        <p id="bookingTourName">Fill in your details to inquire</p>
+                    </div>
+                    <form id="bookingForm" onsubmit="submitBooking(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" id="bookName" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone *</label>
+                                <input type="tel" id="bookPhone" placeholder="+977-XXXXXXXXX" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" id="bookEmail" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Preferred Date</label>
+                                <input type="date" id="bookDate">
+                            </div>
+                            <div class="form-group">
+                                <label>Number of People</label>
+                                <input type="number" id="bookPeople" min="1" max="50" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Special Requirements</label>
+                            <textarea id="bookMessage" rows="3" placeholder="Any special requests..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i> Send Inquiry
+                        </button>
+                    </form>
+                </div>
+                <div class="booking-success-view" id="bookingSuccessView" style="display:none;">
+                    <div class="booking-success">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Inquiry Received!</h3>
+                        <p>Thank you for your interest. Our team will contact you within 24 hours.</p>
+                        <p class="contact-direct"><strong>Direct Contact:</strong> +977-9851134076</p>
+                        <button class="btn btn-primary" onclick="closeBookingModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Itinerary Modal -->
+    <div class="modal-overlay" id="itineraryModal" style="display:none;">
+        <div class="modal itinerary-modal">
+            <button class="modal-close" onclick="closeItineraryModal()">&times;</button>
+            <div id="itineraryContent">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div class="modal-overlay" id="adminLoginModal" style="display:none;">
+        <div class="modal admin-login-modal">
+            <button class="modal-close" onclick="closeAdminLogin()">&times;</button>
+            <div class="admin-login-content">
+                <div class="admin-login-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h2>Admin Login</h2>
+                <p>Enter your credentials to access the admin panel</p>
+                <div id="adminError" class="admin-error" style="display:none;">
+                    <i class="fas fa-exclamation-circle"></i> Invalid username or password
+                </div>
+                <div class="admin-form">
+                    <div class="form-group">
+                        <label for="adminUsername">Username</label>
+                        <input type="text" id="adminUsername" placeholder="Enter username" value="admin">
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword">Password</label>
+                        <input type="password" id="adminPassword" placeholder="Enter password" value="admin123">
+                    </div>
+                    <button class="btn btn-primary btn-block" onclick="adminLogin()">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </div>
+                <p class="admin-hint">Default: admin / admin123</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Admin Dashboard -->
+    <div id="adminDashboard" class="admin-dashboard" style="display:none;">
+        <div class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <img src="logo.png" alt="Logo" class="admin-logo">
+                <div>
+                    <h3>AHT Admin</h3>
+                    <span>Dashboard v2.0</span>
+                </div>
+            </div>
+            <nav class="admin-nav">
+                <button class="admin-nav-btn active" data-section="dashboard" onclick="switchAdminSection('dashboard')">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </button>
+                <button class="admin-nav-btn" data-section="packages" onclick="switchAdminSection('packages')">
+                    <i class="fas fa-box"></i> Packages
+                </button>
+                <button class="admin-nav-btn" data-section="bookings" onclick="switchAdminSection('bookings')">
+                    <i class="fas fa-calendar-check"></i> Bookings
+                </button>
+                <button class="admin-nav-btn" data-section="destinations" onclick="switchAdminSection('destinations')">
+                    <i class="fas fa-map-marker-alt"></i> Destinations
+                </button>
+                <button class="admin-nav-btn" data-section="settings" onclick="switchAdminSection('settings')">
+                    <i class="fas fa-cog"></i> Site Settings
+                </button>
+                <button class="admin-nav-btn" data-section="chatlogs" onclick="switchAdminSection('chatlogs')">
+                    <i class="fas fa-comments"></i> Chat Logs
+                </button>
+                <button class="admin-nav-btn" data-section="sendemail" onclick="switchAdminSection('sendemail')">
+                    <i class="fas fa-paper-plane"></i> Send Email
+                </button>
+            </nav>
+            <div class="admin-sidebar-footer">
+                <button class="admin-logout-btn" onclick="closeAdminDashboard()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+                <a href="#" class="admin-view-site" onclick="closeAdminDashboard(); return false;">
+                    <i class="fas fa-external-link-alt"></i> View Site
+                </a>
+            </div>
+        </div>
+        <div class="admin-main">
+            <div class="admin-topbar">
+                <div class="admin-topbar-left">
+                    <div class="admin-hamburger" id="adminHamburger" onclick="toggleAdminSidebar()">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <h2 id="adminSectionTitle">Dashboard</h2>
+                </div>
+                <div class="admin-topbar-right">
+                    <span class="admin-user-badge"><i class="fas fa-user-shield"></i> Admin</span>
+                </div>
+            </div>
+            <div class="admin-overlay" id="adminOverlay" onclick="toggleAdminSidebar()"></div>
+
+            <!-- Dashboard Section -->
+            <div class="admin-section active" id="section-dashboard">
+                <div class="admin-stats-grid">
+                    <div class="admin-stat-card stat-blue">
+                        <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-num" id="dashBookingCount">0</span>
+                            <span class="stat-lbl">Total Bookings</span>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card stat-green">
+                        <div class="stat-icon"><i class="fas fa-box"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-num" id="dashPackageCount">0</span>
+                            <span class="stat-lbl">Active Packages</span>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card stat-amber">
+                        <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-num" id="dashDestCount">0</span>
+                            <span class="stat-lbl">Destinations</span>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card stat-purple">
+                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-num" id="dashNewCount">0</span>
+                            <span class="stat-lbl">New Inquiries</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-grid">
+                    <div class="dash-card">
+                        <h3><i class="fas fa-clock"></i> Recent Bookings</h3>
+                        <div id="dashRecentBookings"></div>
+                    </div>
+                    <div class="dash-card">
+                        <h3><i class="fas fa-box"></i> Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button class="quick-action-btn" onclick="switchAdminSection('packages'); openPackageForm();">
+                                <i class="fas fa-plus-circle"></i> Add New Package
+                            </button>
+                            <button class="quick-action-btn" onclick="switchAdminSection('destinations'); openDestForm();">
+                                <i class="fas fa-plus-circle"></i> Add New Destination
+                            </button>
+                            <button class="quick-action-btn" onclick="switchAdminSection('bookings')">
+                                <i class="fas fa-eye"></i> View All Bookings
+                            </button>
+                            <button class="quick-action-btn" onclick="switchAdminSection('settings')">
+                                <i class="fas fa-cog"></i> Site Settings
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Packages Section -->
+            <div class="admin-section" id="section-packages">
+                <div class="section-toolbar">
+                    <h3>All Packages (<span id="pkgCount">0</span>)</h3>
+                    <button class="btn btn-primary" onclick="openPackageForm()">
+                        <i class="fas fa-plus"></i> Add Package
+                    </button>
+                </div>
+                <div id="packagesList" class="admin-list"></div>
+            </div>
+
+            <!-- Bookings Section -->
+            <div class="admin-section" id="section-bookings">
+                <div class="section-toolbar">
+                    <h3>All Bookings (<span id="bkgCount">0</span>)</h3>
+                    <div class="toolbar-filters">
+                        <button class="admin-filter-btn active" data-status="all" onclick="filterAdminBookings('all')">All</button>
+                        <button class="admin-filter-btn" data-status="new" onclick="filterAdminBookings('new')">New</button>
+                        <button class="admin-filter-btn" data-status="contacted" onclick="filterAdminBookings('contacted')">Contacted</button>
+                        <button class="admin-filter-btn" data-status="confirmed" onclick="filterAdminBookings('confirmed')">Confirmed</button>
+                        <button class="btn-clear" onclick="clearAllBookings()"><i class="fas fa-trash"></i> Clear All</button>
+                    </div>
+                </div>
+                <div id="adminBookingsList" class="admin-list"></div>
+            </div>
+
+            <!-- Destinations Section -->
+            <div class="admin-section" id="section-destinations">
+                <div class="section-toolbar">
+                    <h3>All Destinations (<span id="destCount">0</span>)</h3>
+                    <button class="btn btn-primary" onclick="openDestForm()">
+                        <i class="fas fa-plus"></i> Add Destination
+                    </button>
+                </div>
+                <div id="destinationsList" class="admin-list"></div>
+            </div>
+
+            <!-- Settings Section -->
+            <div class="admin-section" id="section-settings">
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-home"></i> Hero Section</h3>
+                        <div class="form-group">
+                            <label>Hero Title</label>
+                            <input type="text" id="settingHeroTitle" placeholder="Hero title">
+                        </div>
+                        <div class="form-group">
+                            <label>Hero Subtitle</label>
+                            <input type="text" id="settingHeroSub" placeholder="Hero subtitle">
+                        </div>
+                    </div>
+                    <div class="settings-card">
+                        <h3><i class="fas fa-phone"></i> Contact Info</h3>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" id="settingPhone" placeholder="Phone number">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" id="settingEmail" placeholder="Email address">
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" id="settingAddress" placeholder="Address">
+                        </div>
+                    </div>
+                    <div class="settings-card">
+                        <h3><i class="fas fa-chart-bar"></i> Stats Section</h3>
+                        <div class="form-group">
+                            <label>Trek Routes</label>
+                            <input type="text" id="settingStat1" placeholder="e.g. 20+">
+                        </div>
+                        <div class="form-group">
+                            <label>Happy Travelers</label>
+                            <input type="text" id="settingStat2" placeholder="e.g. 10,000+">
+                        </div>
+                        <div class="form-group">
+                            <label>Customer Rating</label>
+                            <input type="text" id="settingStat3" placeholder="e.g. 4.9/5">
+                        </div>
+                        <div class="form-group">
+                            <label>Safety Record</label>
+                            <input type="text" id="settingStat4" placeholder="e.g. 100%">
+                        </div>
+                    </div>
+                    <div class="settings-card">
+                        <h3><i class="fas fa-info-circle"></i> About Section</h3>
+                        <div class="form-group">
+                            <label>About Title</label>
+                            <input type="text" id="settingAboutTitle" placeholder="About title">
+                        </div>
+                        <div class="form-group">
+                            <label>About Description</label>
+                            <textarea id="settingAboutDesc" rows="4" placeholder="About description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="saveSettings()" style="margin-top:20px;">
+                    <i class="fas fa-save"></i> Save All Settings
+                </button>
+            </div>
+
+            <!-- Chat Logs Section -->
+            <div class="admin-section" id="section-chatlogs">
+                <div class="section-toolbar">
+                    <h3>Chatbot Conversations (<span id="chatCount">0</span>)</h3>
+                    <div class="toolbar-filters">
+                        <button class="admin-filter-btn active" data-chatfilter="all" onclick="filterChatLogs('all')">All</button>
+                        <button class="admin-filter-btn" data-chatfilter="today" onclick="filterChatLogs('today')">Today</button>
+                        <button class="admin-filter-btn" data-chatfilter="week" onclick="filterChatLogs('week')">This Week</button>
+                        <button class="btn-clear" onclick="clearChatLogs()"><i class="fas fa-trash"></i> Clear All</button>
+                    </div>
+                </div>
+                <div id="chatLogsList" class="admin-list"></div>
+            </div>
+
+            <!-- Send Email Section -->
+            <div class="admin-section" id="section-sendemail">
+                <div class="section-toolbar">
+                    <h3><i class="fas fa-paper-plane"></i> Send Email</h3>
+                </div>
+                <div class="send-email-form">
+                    <div class="form-group">
+                        <label>To (Email Address) *</label>
+                        <input type="email" id="sendEmailTo" placeholder="customer@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Subject *</label>
+                        <input type="text" id="sendEmailSubject" placeholder="Email subject">
+                    </div>
+                    <div class="form-group">
+                        <label>Message *</label>
+                        <textarea id="sendEmailMessage" rows="10" placeholder="Type your message here..."></textarea>
+                    </div>
+                    <button class="btn btn-primary" onclick="sendEmailFromAdmin()">
+                        <i class="fas fa-paper-plane"></i> Send Email
+                    </button>
+                    <div id="emailStatus" class="email-status"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Form Modal -->
+    <div class="modal-overlay" id="packageFormModal" style="display:none;">
+        <div class="modal admin-form-modal">
+            <button class="modal-close" onclick="closePackageForm()">&times;</button>
+            <h2 id="pkgFormTitle">Add New Package</h2>
+            <div class="admin-form-scroll">
+                <input type="hidden" id="pkgEditId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Package Name *</label>
+                        <input type="text" id="pkgName" placeholder="e.g. Chitwan Adventure Tour">
+                    </div>
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select id="pkgCategory">
+                            <option value="chitwan">Chitwan</option>
+                            <option value="pokhara">Pokhara</option>
+                            <option value="kathmandu">Kathmandu</option>
+                            <option value="trek">Trekking</option>
+                            <option value="adventure">Adventure</option>
+                            <option value="combo">Combo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Duration *</label>
+                        <input type="text" id="pkgDuration" placeholder="e.g. 2N / 3D">
+                    </div>
+                    <div class="form-group">
+                        <label>Badge Text</label>
+                        <input type="text" id="pkgBadge" placeholder="e.g. Popular, Adventure">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price (NPR) *</label>
+                        <input type="text" id="pkgPriceNPR" placeholder="e.g. 12,500">
+                    </div>
+                    <div class="form-group">
+                        <label>Price (USD) *</label>
+                        <input type="text" id="pkgPriceUSD" placeholder="e.g. 95">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Package Image</label>
+                    <div class="image-upload-row">
+                        <div class="image-upload-box">
+                            <input type="file" id="pkgImageFile" accept="image/*" onchange="handleImageUpload(this, 'pkgImagePreview')">
+                            <label for="pkgImageFile" class="upload-label"><i class="fas fa-cloud-upload-alt"></i> Choose Image</label>
+                            <img id="pkgImagePreview" src="" alt="Preview" class="image-preview" style="display:none;">
+                        </div>
+                        <div class="image-url-field">
+                            <span class="url-or">or paste URL:</span>
+                            <input type="text" id="pkgImage" class="image-url-input" placeholder="e.g. chitwan.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Short Description</label>
+                    <textarea id="pkgDesc" rows="3" placeholder="Brief description of the package"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Highlights (comma-separated)</label>
+                    <input type="text" id="pkgHighlights" placeholder="e.g. Safari, Canoe Ride, Cultural Show">
+                </div>
+                <div class="form-group">
+                    <label>Features (comma-separated)</label>
+                    <input type="text" id="pkgFeatures" placeholder="e.g. All Meals, Guide, Transport">
+                </div>
+                <div class="form-group">
+                    <label>Includes (comma-separated)</label>
+                    <input type="text" id="pkgIncludes" placeholder="e.g. Accommodation, Meals, Guide">
+                </div>
+                <h3 style="margin-top:20px; margin-bottom:15px;">Day-by-Day Itinerary</h3>
+                <div id="itineraryEditor"></div>
+                <button type="button" class="btn btn-secondary" onclick="addItineraryDay()" style="margin-bottom:20px; color:var(--dark); border-color:var(--border);">
+                    <i class="fas fa-plus"></i> Add Day
+                </button>
+            </div>
+            <div class="admin-form-actions">
+                <button class="btn btn-secondary" onclick="closePackageForm()" style="color:var(--dark); border-color:var(--border);">Cancel</button>
+                <button class="btn btn-primary" onclick="savePackage()">
+                    <i class="fas fa-save"></i> Save Package
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Destination Form Modal -->
+    <div class="modal-overlay" id="destFormModal" style="display:none;">
+        <div class="modal admin-form-modal" style="max-width:500px;">
+            <button class="modal-close" onclick="closeDestForm()">&times;</button>
+            <h2 id="destFormTitle">Add New Destination</h2>
+            <div class="admin-form-scroll">
+                <input type="hidden" id="destEditId">
+                <div class="form-group">
+                    <label>Destination Name *</label>
+                    <input type="text" id="destName" placeholder="e.g. Chitwan">
+                </div>
+                <div class="form-group">
+                    <label>Subtitle *</label>
+                    <input type="text" id="destSubtitle" placeholder="e.g. Wildlife & Jungle Safari">
+                </div>
+                <div class="form-group">
+                    <label>Destination Image *</label>
+                    <div class="image-upload-row">
+                        <div class="image-upload-box">
+                            <input type="file" id="destImageFile" accept="image/*" onchange="handleImageUpload(this, 'destImagePreview')">
+                            <label for="destImageFile" class="upload-label"><i class="fas fa-cloud-upload-alt"></i> Choose Image</label>
+                            <img id="destImagePreview" src="" alt="Preview" class="image-preview" style="display:none;">
+                        </div>
+                        <div class="image-url-field">
+                            <span class="url-or">or paste URL:</span>
+                            <input type="text" id="destImage" class="image-url-input" placeholder="e.g. chitwan.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-form-actions">
+                <button class="btn btn-secondary" onclick="closeDestForm()" style="color:var(--dark); border-color:var(--border);">Cancel</button>
+                <button class="btn btn-primary" onclick="saveDestination()">
+                    <i class="fas fa-save"></i> Save Destination
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <h4>AHT Assistant</h4>
+                        <span class="chatbot-status"><span class="status-dot"></span> Online</span>
+                    </div>
+                </div>
+                <button class="chatbot-close-btn" onclick="toggleChatbot()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chat-msg bot">
+                    <div class="chat-msg-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="chat-msg-bubble">
+                        <p>Welcome to Adventure Hunt Treks! I can help you with:</p>
+                        <ul>
+                            <li>Tour packages & pricing</li>
+                            <li>Trek information</li>
+                            <li>Booking assistance</li>
+                            <li>Travel tips for Nepal</li>
+                        </ul>
+                        <p>How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-quick-actions">
+                <button onclick="sendChatQuick('What packages do you offer?')">Packages</button>
+                <button onclick="sendChatQuick('Tell me about Chitwan tours')">Chitwan</button>
+                <button onclick="sendChatQuick('What treks are available?')">Trekking</button>
+                <button onclick="sendChatQuick('How to book?')">Booking</button>
+                <button onclick="sendChatQuick('Contact information')">Contact</button>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbotInput" placeholder="Type your message..." onkeydown="if(event.key==='Enter') sendChatMessage()">
+                <button class="chatbot-send-btn" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button class="chatbot-bubble" id="chatbotBubble" onclick="toggleChatbot()">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge" id="chatbotBadge" style="display:none;">1</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
