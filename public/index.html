@@ -132,37 +132,6 @@
                                 <p>Round-the-clock assistance</p>
                 </div>
             </div>
-
-            <!-- Brochure Admin Section -->
-            <div class="admin-section" id="section-brochure">
-                <div class="section-toolbar">
-                    <h3><i class="fas fa-file-image"></i> Manage Brochure</h3>
-                </div>
-                <p style="color: var(--gray); margin-bottom: 25px;">Upload brochure images (front and back). These will be visible to Nepali visitors in the Brochure section.</p>
-                <div class="brochure-admin-grid">
-                    <div class="brochure-admin-card">
-                        <h4><i class="fas fa-image"></i> Front Page</h4>
-                        <div class="brochure-admin-preview" id="adminBrochureFrontPreview">
-                            <p class="brochure-placeholder"><i class="fas fa-cloud-upload-alt"></i><br>No image uploaded</p>
-                        </div>
-                        <label class="btn btn-primary" for="adminBrochureFrontUpload" style="cursor:pointer;">
-                            <i class="fas fa-upload"></i> Upload Front Page
-                        </label>
-                        <input type="file" id="adminBrochureFrontUpload" accept="image/*" style="display:none;" onchange="handleBrochureUpload('front', this)">
-                    </div>
-                    <div class="brochure-admin-card">
-                        <h4><i class="fas fa-image"></i> Back Page</h4>
-                        <div class="brochure-admin-preview" id="adminBrochureBackPreview">
-                            <p class="brochure-placeholder"><i class="fas fa-cloud-upload-alt"></i><br>No image uploaded</p>
-                        </div>
-                        <label class="btn btn-primary" for="adminBrochureBackUpload" style="cursor:pointer;">
-                            <i class="fas fa-upload"></i> Upload Back Page
-                        </label>
-                        <input type="file" id="adminBrochureBackUpload" accept="image/*" style="display:none;" onchange="handleBrochureUpload('back', this)">
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
                 <div class="about-contact-card">
@@ -1183,6 +1152,37 @@
                     <div id="emailStatus" class="email-status"></div>
                 </div>
             </div>
+
+            <!-- Brochure Admin Section -->
+            <div class="admin-section" id="section-brochure">
+                <div class="section-toolbar">
+                    <h3><i class="fas fa-file-image"></i> Manage Brochure</h3>
+                </div>
+                <p style="color: var(--gray); margin-bottom: 25px;">Upload brochure images (front and back). These will be visible to Nepali visitors in the Brochure section.</p>
+                <div class="brochure-admin-grid">
+                    <div class="brochure-admin-card">
+                        <h4><i class="fas fa-image"></i> Front Page</h4>
+                        <div class="brochure-admin-preview" id="adminBrochureFrontPreview">
+                            <p class="brochure-placeholder"><i class="fas fa-cloud-upload-alt"></i><br>No image uploaded</p>
+                        </div>
+                        <label class="btn btn-primary" for="adminBrochureFrontUpload" style="cursor:pointer;">
+                            <i class="fas fa-upload"></i> Upload Front Page
+                        </label>
+                        <input type="file" id="adminBrochureFrontUpload" accept="image/*" style="display:none;" onchange="handleBrochureUpload('front', this)">
+                    </div>
+                    <div class="brochure-admin-card">
+                        <h4><i class="fas fa-image"></i> Back Page</h4>
+                        <div class="brochure-admin-preview" id="adminBrochureBackPreview">
+                            <p class="brochure-placeholder"><i class="fas fa-cloud-upload-alt"></i><br>No image uploaded</p>
+                        </div>
+                        <label class="btn btn-primary" for="adminBrochureBackUpload" style="cursor:pointer;">
+                            <i class="fas fa-upload"></i> Upload Back Page
+                        </label>
+                        <input type="file" id="adminBrochureBackUpload" accept="image/*" style="display:none;" onchange="handleBrochureUpload('back', this)">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
