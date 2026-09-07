@@ -337,29 +337,29 @@ const defaultPackages = {
         shortDesc: 'The ultimate Annapurna experience — cross the world\'s widest trekking pass Thorong La (5,416m), traverse from subtropical forests to ice flows, visit Muktinath Temple, Tatopani hot springs, and Poon Hill viewpoint.',
         highlights: ['Thorong La Pass (5,416m)', 'Muktinath Temple', 'Tatopani Hot Springs', 'Poon Hill Viewpoint', 'Marpha Village', 'Tea House Trek'],
         itinerary: [
-            { day: 'Day 1', title: 'Welcome to Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel. Trek preparation and briefing.', image: 'ghandruk.png' },
-            { day: 'Day 2', title: 'Explore Kathmandu', desc: 'Free day to explore Kathmandu Durbar Square, Thamel, and Swayambhunath.', image: 'ghandruk.png' },
-            { day: 'Day 3', title: 'Drive to Besisahar, Trek to Khudi', desc: 'Drive Kathmandu to Besisahar (6-7hrs). Trek to Khudi. Overnight tea house.', image: 'annapurna.jpg' },
-            { day: 'Day 4', title: 'Trek to Bahundanda', desc: 'Trek through subtropical forests and rice terraces to Bahundanda.', image: 'annapurna.jpg' },
-            { day: 'Day 5', title: 'Trek to Jagat', desc: 'Continue along Marsyangdi River. Pass waterfalls and villages. Arrive Jagat.', image: 'annapurna.jpg' },
-            { day: 'Day 6', title: 'Trek to Dharapani', desc: 'Enter Annapurna Conservation Area. Pass through Tal valley. Arrive Dharapani.', image: 'annapurna.jpg' },
-            { day: 'Day 7', title: 'Trek to Chame', desc: 'Trek through pine forests with views of Annapurna II and Lamjung Himal.', image: 'annapurna.jpg' },
-            { day: 'Day 8', title: 'Trek to Pisang', desc: 'Pass through apple orchards. Arrive Pisang with panoramic mountain views.', image: 'annapurna.jpg' },
-            { day: 'Day 9', title: 'Trek to Manang', desc: 'Trek to Manang Valley. Visit Barge Monastery. Acclimatize.', image: 'annapurna.jpg' },
-            { day: 'Day 10', title: 'Acclimatization Day Manang', desc: 'Day trip to Ice Lake or Gangapurna Lake. Rest and acclimatize.', image: 'annapurna.jpg' },
-            { day: 'Day 11', title: 'Trek to Yak Kharka', desc: 'Gradual ascent through high altitude landscape. Yak pastures.', image: 'annapurna.jpg' },
-            { day: 'Day 12', title: 'Trek to Thorong Phedi', desc: 'Last stop before Thorong La. Rest and prepare for early start.', image: 'annapurna.jpg' },
-            { day: 'Day 13', title: 'Cross Thorong La (5,416m) to Muktinath', desc: 'Early morning departure. Cross world\'s widest trekking pass. Descend to Muktinath.', image: 'muktinath-temple.png' },
-            { day: 'Day 14', title: 'Trek to Jomsom', desc: 'Visit Muktinath Temple. Descend through Kali Gandaki gorge. Arrive Jomsom.', image: 'muktinath.png' },
-            { day: 'Day 15', title: 'Trek to Marpha', desc: 'Trek through apple orchards. Explore Marpha village and apple brandy factories.', image: 'muktinath.png' },
-            { day: 'Day 16', title: 'Trek to Kalopani', desc: 'Continue through Kali Gandaki gorge. Views of Dhaulagiri and Annapurna.', image: 'annapurna.jpg' },
-            { day: 'Day 17', title: 'Trek to Tatopani', desc: 'Descend to Tatopani. Relax in natural hot springs.', image: 'annapurna.jpg' },
-            { day: 'Day 18', title: 'Trek to Ghorepani', desc: 'Steep climb through rhododendron forest to Ghorepani.', image: 'ghandruk-trek.jpg' },
-            { day: 'Day 19', title: 'Poon Hill Sunrise, Trek to Tadapani', desc: 'Early morning hike to Poon Hill for sunrise over 20+ Himalayan peaks. Trek to Tadapani.', image: 'ghandruk-trek.jpg' },
-            { day: 'Day 20', title: 'Trek to Ghandruk', desc: 'Descend to Ghandruk village. Explore Gurung culture and architecture.', image: 'ghandruk-village.png' },
-            { day: 'Day 21', title: 'Trek to Nayapul, Drive to Pokhara', desc: 'Trek downhill to Nayapul. Drive to Pokhara. Celebrate.', image: 'pokhara.jpg' },
-            { day: 'Day 22', title: 'Pokhara to Kathmandu', desc: 'Scenic drive back to Kathmandu. Farewell dinner.', image: 'pokhara.jpg' },
-            { day: 'Day 23', title: 'Departure', desc: 'Transfer to airport. Tour ends.', image: 'ghandruk.png' }
+            { day: 'Day 1', title: 'Welcome to Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel. Trek preparation and briefing.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 2', title: 'Explore Kathmandu', desc: 'Free day to explore Kathmandu Durbar Square, Thamel, and Swayambhunath.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 3', title: 'Drive to Besisahar, Trek to Khudi', desc: 'Drive Kathmandu to Besisahar (6-7hrs). Trek to Khudi. Overnight tea house.', image: 'annapurna.jpg', region: 'Annapurna Circuit' },
+            { day: 'Day 4', title: 'Trek to Bahundanda', desc: 'Trek through subtropical forests and rice terraces to Bahundanda.', image: 'annapurna.jpg', region: 'Annapurna Circuit' },
+            { day: 'Day 5', title: 'Trek to Jagat', desc: 'Continue along Marsyangdi River. Pass waterfalls and villages. Arrive Jagat.', image: 'annapurna.jpg', region: 'Annapurna Circuit' },
+            { day: 'Day 6', title: 'Trek to Dharapani', desc: 'Enter Annapurna Conservation Area. Pass through Tal valley. Arrive Dharapani.', image: 'annapurna.jpg', region: 'Annapurna Circuit' },
+            { day: 'Day 7', title: 'Trek to Chame', desc: 'Trek through pine forests with views of Annapurna II and Lamjung Himal.', image: 'annapurna.jpg', region: 'Annapurna Circuit' },
+            { day: 'Day 8', title: 'Trek to Pisang', desc: 'Pass through apple orchards. Arrive Pisang with panoramic mountain views.', image: 'annapurna.jpg', region: 'Annapurna Circuit' },
+            { day: 'Day 9', title: 'Trek to Manang', desc: 'Trek to Manang Valley. Visit Barge Monastery. Acclimatize.', image: 'annapurna.jpg', region: 'Annapurna Circuit' },
+            { day: 'Day 10', title: 'Acclimatization Day Manang', desc: 'Day trip to Ice Lake or Gangapurna Lake. Rest and acclimatize.', image: 'annapurna.jpg', region: 'Annapurna Circuit' },
+            { day: 'Day 11', title: 'Trek to Yak Kharka', desc: 'Gradual ascent through high altitude landscape. Yak pastures.', image: 'annapurna.jpg', region: 'Annapurna Circuit' },
+            { day: 'Day 12', title: 'Trek to Thorong Phedi', desc: 'Last stop before Thorong La. Rest and prepare for early start.', image: 'annapurna.jpg', region: 'Annapurna Circuit' },
+            { day: 'Day 13', title: 'Cross Thorong La (5,416m) to Muktinath', desc: 'Early morning departure. Cross world\'s widest trekking pass. Descend to Muktinath.', image: 'muktinath-temple.png', region: 'Mustang' },
+            { day: 'Day 14', title: 'Trek to Jomsom', desc: 'Visit Muktinath Temple. Descend through Kali Gandaki gorge. Arrive Jomsom.', image: 'muktinath.png', region: 'Mustang' },
+            { day: 'Day 15', title: 'Trek to Marpha', desc: 'Trek through apple orchards. Explore Marpha village and apple brandy factories.', image: 'muktinath.png', region: 'Mustang' },
+            { day: 'Day 16', title: 'Trek to Kalopani', desc: 'Continue through Kali Gandaki gorge. Views of Dhaulagiri and Annapurna.', image: 'annapurna.jpg', region: 'Annapurna' },
+            { day: 'Day 17', title: 'Trek to Tatopani', desc: 'Descend to Tatopani. Relax in natural hot springs.', image: 'annapurna.jpg', region: 'Annapurna' },
+            { day: 'Day 18', title: 'Trek to Ghorepani', desc: 'Steep climb through rhododendron forest to Ghorepani.', image: 'ghandruk-trek.jpg', region: 'Poon Hill' },
+            { day: 'Day 19', title: 'Poon Hill Sunrise, Trek to Tadapani', desc: 'Early morning hike to Poon Hill for sunrise over 20+ Himalayan peaks. Trek to Tadapani.', image: 'ghandruk-trek.jpg', region: 'Poon Hill' },
+            { day: 'Day 20', title: 'Trek to Ghandruk', desc: 'Descend to Ghandruk village. Explore Gurung culture and architecture.', image: 'ghandruk-village.png', region: 'Ghandruk' },
+            { day: 'Day 21', title: 'Trek to Nayapul, Drive to Pokhara', desc: 'Trek downhill to Nayapul. Drive to Pokhara. Celebrate.', image: 'pokhara.jpg', region: 'Pokhara' },
+            { day: 'Day 22', title: 'Pokhara to Kathmandu', desc: 'Scenic drive back to Kathmandu. Farewell dinner.', image: 'pokhara.jpg', region: 'Kathmandu' },
+            { day: 'Day 23', title: 'Departure', desc: 'Transfer to airport. Tour ends.', image: 'ghandruk.png', region: 'Kathmandu' }
         ],
         includes: ['Experienced trekking guide', 'All accommodation (tea houses during trek, hotels in cities)', 'All meals during trek', 'ACAP Permit', 'TIMS Card', 'All transportation', 'Porter service (1 porter for 2 people)']
     },
@@ -408,27 +408,27 @@ const defaultPackages = {
         shortDesc: 'Complete Langtang region circuit — Tamang Heritage Trail + Langtang Valley + Gosaikunda Lake + Helambu. Cross Lauribinayak La (4,610m), visit sacred Gosaikunda Lake, and explore diverse cultures.',
         highlights: ['Gosaikunda Lake (4,460m)', 'Lauribinayak La Pass', 'Kyanjin Gompa', 'Tamang Heritage', 'Helambu Region', 'Sacred Lakes'],
         itinerary: [
-            { day: 'Day 1', title: 'Arrive Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel.', image: 'ghandruk.png' },
-            { day: 'Day 2', title: 'Trek Preparation Day', desc: 'Rest and prepare for trek.', image: 'ghandruk.png' },
-            { day: 'Day 3', title: 'Drive to Syabrubesi', desc: 'Scenic drive to Syabrubesi (8hrs).', image: 'annapurna.jpg' },
-            { day: 'Day 4', title: 'Trek to Gatlang', desc: 'Trek to Tamang village of Gatlang.', image: 'annapurna.jpg' },
-            { day: 'Day 5', title: 'Trek to Tatopani', desc: 'Trek to hot springs at Tatopani.', image: 'annapurna.jpg' },
-            { day: 'Day 6', title: 'Trek to Thuman', desc: 'Trek to Thuman village.', image: 'annapurna.jpg' },
-            { day: 'Day 7', title: 'Trek to Briddim', desc: 'Trek to Briddim village.', image: 'annapurna.jpg' },
-            { day: 'Day 8', title: 'Trek to Lama Hotel', desc: 'Trek to Lama Hotel along Langtang Khola.', image: 'annapurna.jpg' },
-            { day: 'Day 9', title: 'Trek to Langtang Valley', desc: 'Continue to Langtang Valley.', image: 'annapurna.jpg' },
-            { day: 'Day 10', title: 'Trek to Kyanjin Gompa', desc: 'Arrive Kyanjin Gompa. Visit monastery.', image: 'annapurna.jpg' },
-            { day: 'Day 11', title: 'Tserko Ri & Descend', desc: 'Hike Tserko Ri. Descend to Lama Hotel.', image: 'annapurna.jpg' },
-            { day: 'Day 12', title: 'Trek to Thulo Syabru', desc: 'Trek to Thulo Syabru.', image: 'annapurna.jpg' },
-            { day: 'Day 13', title: 'Trek to Sing Gompa', desc: 'Trek to Sing Gompa monastery.', image: 'annapurna.jpg' },
-            { day: 'Day 14', title: 'Trek to Laurebinayak', desc: 'Ascend to Laurebinayak.', image: 'annapurna.jpg' },
-            { day: 'Day 15', title: 'Trek to Gosaikunda', desc: 'Arrive sacred Gosaikunda Lake (4,460m).', image: 'annapurna.jpg' },
-            { day: 'Day 16', title: 'Trek to Gopte', desc: 'Cross pass and descend to Gopte.', image: 'annapurna.jpg' },
-            { day: 'Day 17', title: 'Trek to Tharepati', desc: 'Trek to Tharepati.', image: 'annapurna.jpg' },
-            { day: 'Day 18', title: 'Trek to Gul Bhanjyang', desc: 'Descend through forest to Gul Bhanjyang.', image: 'annapurna.jpg' },
-            { day: 'Day 19', title: 'Trek to Chisapani', desc: 'Trek to Chisapani for sunset views.', image: 'annapurna.jpg' },
-            { day: 'Day 20', title: 'Trek to Sundarijal, Drive to Kathmandu', desc: 'Descend to Sundarijal. Drive to Kathmandu.', image: 'pokhara.jpg' },
-            { day: 'Day 21', title: 'Departure', desc: 'Transfer to airport. Tour ends.', image: 'ghandruk.png' }
+            { day: 'Day 1', title: 'Arrive Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 2', title: 'Trek Preparation Day', desc: 'Rest and prepare for trek.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 3', title: 'Drive to Syabrubesi', desc: 'Scenic drive to Syabrubesi (8hrs).', image: 'annapurna.jpg', region: 'Langtang' },
+            { day: 'Day 4', title: 'Trek to Gatlang', desc: 'Trek to Tamang village of Gatlang.', image: 'annapurna.jpg', region: 'Tamang Heritage' },
+            { day: 'Day 5', title: 'Trek to Tatopani', desc: 'Trek to hot springs at Tatopani.', image: 'annapurna.jpg', region: 'Tamang Heritage' },
+            { day: 'Day 6', title: 'Trek to Thuman', desc: 'Trek to Thuman village.', image: 'annapurna.jpg', region: 'Tamang Heritage' },
+            { day: 'Day 7', title: 'Trek to Briddim', desc: 'Trek to Briddim village.', image: 'annapurna.jpg', region: 'Tamang Heritage' },
+            { day: 'Day 8', title: 'Trek to Lama Hotel', desc: 'Trek to Lama Hotel along Langtang Khola.', image: 'annapurna.jpg', region: 'Langtang Valley' },
+            { day: 'Day 9', title: 'Trek to Langtang Valley', desc: 'Continue to Langtang Valley.', image: 'annapurna.jpg', region: 'Langtang Valley' },
+            { day: 'Day 10', title: 'Trek to Kyanjin Gompa', desc: 'Arrive Kyanjin Gompa. Visit monastery.', image: 'annapurna.jpg', region: 'Langtang Valley' },
+            { day: 'Day 11', title: 'Tserko Ri & Descend', desc: 'Hike Tserko Ri. Descend to Lama Hotel.', image: 'annapurna.jpg', region: 'Langtang Valley' },
+            { day: 'Day 12', title: 'Trek to Thulo Syabru', desc: 'Trek to Thulo Syabru.', image: 'annapurna.jpg', region: 'Gosaikunda' },
+            { day: 'Day 13', title: 'Trek to Sing Gompa', desc: 'Trek to Sing Gompa monastery.', image: 'annapurna.jpg', region: 'Gosaikunda' },
+            { day: 'Day 14', title: 'Trek to Laurebinayak', desc: 'Ascend to Laurebinayak.', image: 'annapurna.jpg', region: 'Gosaikunda' },
+            { day: 'Day 15', title: 'Trek to Gosaikunda', desc: 'Arrive sacred Gosaikunda Lake (4,460m).', image: 'annapurna.jpg', region: 'Gosaikunda' },
+            { day: 'Day 16', title: 'Trek to Gopte', desc: 'Cross pass and descend to Gopte.', image: 'annapurna.jpg', region: 'Helambu' },
+            { day: 'Day 17', title: 'Trek to Tharepati', desc: 'Trek to Tharepati.', image: 'annapurna.jpg', region: 'Helambu' },
+            { day: 'Day 18', title: 'Trek to Gul Bhanjyang', desc: 'Descend through forest to Gul Bhanjyang.', image: 'annapurna.jpg', region: 'Helambu' },
+            { day: 'Day 19', title: 'Trek to Chisapani', desc: 'Trek to Chisapani for sunset views.', image: 'annapurna.jpg', region: 'Helambu' },
+            { day: 'Day 20', title: 'Trek to Sundarijal, Drive to Kathmandu', desc: 'Descend to Sundarijal. Drive to Kathmandu.', image: 'pokhara.jpg', region: 'Helambu' },
+            { day: 'Day 21', title: 'Departure', desc: 'Transfer to airport. Tour ends.', image: 'ghandruk.png', region: 'Kathmandu' }
         ],
         includes: ['Experienced trekking guide', 'All accommodation', 'All meals during trek', 'Langtang Conservation Permit', 'Gosaikunda Trek Permit', 'All transportation', 'Porter service']
     },
@@ -438,17 +438,17 @@ const defaultPackages = {
         shortDesc: 'Combine Langtang Valley with sacred Gosaikunda Lake — hike to Tserko Ri (5,000m), visit Kyanjin Gompa, and trek to the holy alpine lake at 4,380m. Diverse landscapes from valleys to high passes.',
         highlights: ['Gosaikunda Lake (4,380m)', 'Tserko Ri (5,000m)', 'Kyanjin Gompa', 'Langtang Valley', 'Laurebina La Pass', 'Sacred Pilgrimage'],
         itinerary: [
-            { day: 'Day 1', title: 'Arrive Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel.', image: 'ghandruk.png' },
-            { day: 'Day 2', title: 'Trek Preparation Day', desc: 'Rest and prepare for trek.', image: 'ghandruk.png' },
-            { day: 'Day 3', title: 'Drive to Syabrubesi', desc: 'Scenic drive to Syabrubesi.', image: 'annapurna.jpg' },
-            { day: 'Day 4', title: 'Trek to Lama Hotel', desc: 'Trek through forest to Lama Hotel.', image: 'annapurna.jpg' },
-            { day: 'Day 5', title: 'Trek to Langtang Valley', desc: 'Continue to Langtang Valley.', image: 'annapurna.jpg' },
-            { day: 'Day 6', title: 'Trek to Kyanjin Gompa', desc: 'Arrive Kyanjin Gompa.', image: 'annapurna.jpg' },
-            { day: 'Day 7', title: 'Tserko Ri & Descend to Lama Hotel', desc: 'Hike Tserko Ri. Descend.', image: 'annapurna.jpg' },
-            { day: 'Day 8', title: 'Trek to Thulo Syabru', desc: 'Trek to Thulo Syabru.', image: 'annapurna.jpg' },
-            { day: 'Day 9', title: 'Trek to Sing Gompa', desc: 'Trek to Sing Gompa.', image: 'annapurna.jpg' },
-            { day: 'Day 10', title: 'Trek to Laurebinayak', desc: 'Ascend to Laurebinayak.', image: 'annapurna.jpg' },
-            { day: 'Day 11', title: 'Trek to Gosaikunda', desc: 'Arrive sacred Gosaikunda Lake.', image: 'annapurna.jpg' }
+            { day: 'Day 1', title: 'Arrive Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 2', title: 'Trek Preparation Day', desc: 'Rest and prepare for trek.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 3', title: 'Drive to Syabrubesi', desc: 'Scenic drive to Syabrubesi.', image: 'annapurna.jpg', region: 'Langtang' },
+            { day: 'Day 4', title: 'Trek to Lama Hotel', desc: 'Trek through forest to Lama Hotel.', image: 'annapurna.jpg', region: 'Langtang Valley' },
+            { day: 'Day 5', title: 'Trek to Langtang Valley', desc: 'Continue to Langtang Valley.', image: 'annapurna.jpg', region: 'Langtang Valley' },
+            { day: 'Day 6', title: 'Trek to Kyanjin Gompa', desc: 'Arrive Kyanjin Gompa.', image: 'annapurna.jpg', region: 'Langtang Valley' },
+            { day: 'Day 7', title: 'Tserko Ri & Descend to Lama Hotel', desc: 'Hike Tserko Ri. Descend.', image: 'annapurna.jpg', region: 'Langtang Valley' },
+            { day: 'Day 8', title: 'Trek to Thulo Syabru', desc: 'Trek to Thulo Syabru.', image: 'annapurna.jpg', region: 'Gosaikunda' },
+            { day: 'Day 9', title: 'Trek to Sing Gompa', desc: 'Trek to Sing Gompa.', image: 'annapurna.jpg', region: 'Gosaikunda' },
+            { day: 'Day 10', title: 'Trek to Laurebinayak', desc: 'Ascend to Laurebinayak.', image: 'annapurna.jpg', region: 'Gosaikunda' },
+            { day: 'Day 11', title: 'Trek to Gosaikunda', desc: 'Arrive sacred Gosaikunda Lake.', image: 'annapurna.jpg', region: 'Gosaikunda' }
         ],
         includes: ['Experienced trekking guide', 'All accommodation', 'All meals during trek', 'Langtang Conservation Permit', 'Gosaikunda Trek Permit', 'All transportation', 'Porter service']
     },
@@ -458,17 +458,17 @@ const defaultPackages = {
         shortDesc: 'Short and easy trek near Kathmandu through Tamang Hyolmo culture — Buddhist monasteries, rhododendron forests, panoramic landscapes from Annapurna to Everest, exotic flora and fauna.',
         highlights: ['Near Kathmandu', 'Tamang Hyolmo Culture', 'Buddhist Monasteries', 'Rhododendron Forests', 'Panoramic Views', 'Easy Grade'],
         itinerary: [
-            { day: 'Day 1', title: 'Arrive Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel.', image: 'ghandruk.png' },
-            { day: 'Day 2', title: 'Trek Preparation Day', desc: 'Rest and prepare for trek.', image: 'ghandruk.png' },
-            { day: 'Day 3', title: 'Drive to Chisapani', desc: 'Drive from Bhaktapur to Chisapani.', image: 'annapurna.jpg' },
-            { day: 'Day 4', title: 'Trek to Gul Bhanjyang', desc: 'Trek through forest to Gul Bhanjyang.', image: 'annapurna.jpg' },
-            { day: 'Day 5', title: 'Trek to Tharepati', desc: 'Ascend to Tharepati (3,650m).', image: 'annapurna.jpg' },
-            { day: 'Day 6', title: 'Trek to Melamchigaon', desc: 'Descend to Melamchigaon village.', image: 'annapurna.jpg' },
-            { day: 'Day 7', title: 'Trek to Tarke Gyang', desc: 'Trek to Tarke Gyang monastery village.', image: 'annapurna.jpg' },
-            { day: 'Day 8', title: 'Trek to Sermathang', desc: 'Trek to Sermathang.', image: 'annapurna.jpg' },
-            { day: 'Day 9', title: 'Trek to Melamchi Pul, Drive to Kathmandu', desc: 'Descend to road. Drive to Kathmandu.', image: 'pokhara.jpg' },
-            { day: 'Day 10', title: 'Kathmandu Sightseeing', desc: 'Free day in Kathmandu.', image: 'ghandruk.png' },
-            { day: 'Day 11', title: 'Departure', desc: 'Transfer to airport. Tour ends.', image: 'ghandruk.png' }
+            { day: 'Day 1', title: 'Arrive Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 2', title: 'Trek Preparation Day', desc: 'Rest and prepare for trek.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 3', title: 'Drive to Chisapani', desc: 'Drive from Bhaktapur to Chisapani.', image: 'annapurna.jpg', region: 'Helambu' },
+            { day: 'Day 4', title: 'Trek to Gul Bhanjyang', desc: 'Trek through forest to Gul Bhanjyang.', image: 'annapurna.jpg', region: 'Helambu' },
+            { day: 'Day 5', title: 'Trek to Tharepati', desc: 'Ascend to Tharepati (3,650m).', image: 'annapurna.jpg', region: 'Helambu' },
+            { day: 'Day 6', title: 'Trek to Melamchigaon', desc: 'Descend to Melamchigaon village.', image: 'annapurna.jpg', region: 'Helambu' },
+            { day: 'Day 7', title: 'Trek to Tarke Gyang', desc: 'Trek to Tarke Gyang monastery village.', image: 'annapurna.jpg', region: 'Helambu' },
+            { day: 'Day 8', title: 'Trek to Sermathang', desc: 'Trek to Sermathang.', image: 'annapurna.jpg', region: 'Helambu' },
+            { day: 'Day 9', title: 'Trek to Melamchi Pul, Drive to Kathmandu', desc: 'Descend to road. Drive to Kathmandu.', image: 'pokhara.jpg', region: 'Helambu' },
+            { day: 'Day 10', title: 'Kathmandu Sightseeing', desc: 'Free day in Kathmandu.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 11', title: 'Departure', desc: 'Transfer to airport. Tour ends.', image: 'ghandruk.png', region: 'Kathmandu' }
         ],
         includes: ['Experienced trekking guide', 'All accommodation', 'All meals during trek', 'Conservation Permit', 'All transportation', 'Porter service']
     },
@@ -478,25 +478,25 @@ const defaultPackages = {
         shortDesc: 'Circle the world\'s 8th highest mountain — cross Larkya La Pass (5,135m), experience remote off-the-beaten-path trekking through pristine forests and glaciers with Tibetan Buddhist culture.',
         highlights: ['Larkya La Pass (5,135m)', 'Manaslu (8,156m)', 'Remote Trekking', 'Tibetan Buddhist Culture', 'Snow Leopard Habitat', 'Restricted Area'],
         itinerary: [
-            { day: 'Day 1', title: 'Arrive Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel.', image: 'ghandruk.png' },
-            { day: 'Day 2', title: 'Rest Day', desc: 'Rest and explore Kathmandu Durbar Square and Thamel.', image: 'ghandruk.png' },
-            { day: 'Day 3', title: 'Drive to Machhakhola', desc: 'Long drive to trailhead Machhakhola (8hrs).', image: 'annapurna.jpg' },
-            { day: 'Day 4', title: 'Trek to Jagat', desc: 'Trek along Budhi Gandaki River to Jagat.', image: 'annapurna.jpg' },
-            { day: 'Day 5', title: 'Trek to Pewa', desc: 'Trek through narrow gorge to Pewa.', image: 'annapurna.jpg' },
-            { day: 'Day 6', title: 'Trek to Namrung', desc: 'Enter restricted area. Trek to Namrung.', image: 'annapurna.jpg' },
-            { day: 'Day 7', title: 'Trek to Lho', desc: 'Trek to Lho with first views of Manaslu.', image: 'annapurna.jpg' },
-            { day: 'Day 8', title: 'Trek to Sama Gaon', desc: 'Trek to Sama Gaon. Acclimatize.', image: 'annapurna.jpg' },
-            { day: 'Day 9', title: 'Acclimatization Day', desc: 'Day trip to Manaslu Base Camp or Pungyen Gompa.', image: 'annapurna.jpg' },
-            { day: 'Day 10', title: 'Trek to Samdo', desc: 'Trek to Samdo near Tibetan border.', image: 'annapurna.jpg' },
-            { day: 'Day 11', title: 'Acclimatization Day', desc: 'Day trip to Tibet Border viewpoint.', image: 'annapurna.jpg' },
-            { day: 'Day 12', title: 'Trek to Dharamsala', desc: 'Trek to Dharamsala (Larkya Phedi).', image: 'annapurna.jpg' },
-            { day: 'Day 13', title: 'Cross Larkya La (5,135m) to Bimtang', desc: 'Early start. Cross Larkya La Pass. Descend to Bimtang.', image: 'annapurna.jpg' },
-            { day: 'Day 14', title: 'Trek to Dharapani', desc: 'Descend through forest to Dharapani.', image: 'annapurna.jpg' },
-            { day: 'Day 15', title: 'Drive to Pokhara', desc: 'Long drive to Pokhara.', image: 'pokhara.jpg' },
-            { day: 'Day 16', title: 'Rest Day Pokhara', desc: 'Free day in Pokhara.', image: 'pokhara.jpg' },
-            { day: 'Day 17', title: 'Drive to Bhaktapur', desc: 'Tourist bus to Bhaktapur.', image: 'ghandruk.png' },
-            { day: 'Day 18', title: 'Free Day Bhaktapur', desc: 'Explore Bhaktapur.', image: 'ghandruk.png' },
-            { day: 'Day 19', title: 'Departure', desc: 'Transfer to airport. Tour ends.', image: 'ghandruk.png' }
+            { day: 'Day 1', title: 'Arrive Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 2', title: 'Rest Day', desc: 'Rest and explore Kathmandu Durbar Square and Thamel.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 3', title: 'Drive to Machhakhola', desc: 'Long drive to trailhead Machhakhola (8hrs).', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 4', title: 'Trek to Jagat', desc: 'Trek along Budhi Gandaki River to Jagat.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 5', title: 'Trek to Pewa', desc: 'Trek through narrow gorge to Pewa.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 6', title: 'Trek to Namrung', desc: 'Enter restricted area. Trek to Namrung.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 7', title: 'Trek to Lho', desc: 'Trek to Lho with first views of Manaslu.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 8', title: 'Trek to Sama Gaon', desc: 'Trek to Sama Gaon. Acclimatize.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 9', title: 'Acclimatization Day', desc: 'Day trip to Manaslu Base Camp or Pungyen Gompa.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 10', title: 'Trek to Samdo', desc: 'Trek to Samdo near Tibetan border.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 11', title: 'Acclimatization Day', desc: 'Day trip to Tibet Border viewpoint.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 12', title: 'Trek to Dharamsala', desc: 'Trek to Dharamsala (Larkya Phedi).', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 13', title: 'Cross Larkya La (5,135m) to Bimtang', desc: 'Early start. Cross Larkya La Pass. Descend to Bimtang.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 14', title: 'Trek to Dharapani', desc: 'Descend through forest to Dharapani.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 15', title: 'Drive to Pokhara', desc: 'Long drive to Pokhara.', image: 'pokhara.jpg', region: 'Pokhara' },
+            { day: 'Day 16', title: 'Rest Day Pokhara', desc: 'Free day in Pokhara.', image: 'pokhara.jpg', region: 'Pokhara' },
+            { day: 'Day 17', title: 'Drive to Bhaktapur', desc: 'Tourist bus to Bhaktapur.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 18', title: 'Free Day Bhaktapur', desc: 'Explore Bhaktapur.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 19', title: 'Departure', desc: 'Transfer to airport. Tour ends.', image: 'ghandruk.png', region: 'Kathmandu' }
         ],
         includes: ['Experienced trekking guide', 'All accommodation', 'All meals during trek', 'Manaslu Restricted Area Permit', 'ACAP Permit', 'MCAP Permit', 'All transportation', 'Porter service (1 porter for 2 people)']
     },
@@ -506,27 +506,27 @@ const defaultPackages = {
         shortDesc: 'Explore the hidden Tsum Valley (opened 2008) and cross Larkya La — walk to Tibetan border, visit ancient monasteries, Milarepa\'s Cave, and experience pristine Tsumba community culture.',
         highlights: ['Tsum Valley (Hidden Valley)', 'Larkya La Pass (5,106m)', 'Milarepa\'s Cave', 'Mu Gompa', 'Tibetan Border', 'Ancient Monasteries'],
         itinerary: [
-            { day: 'Day 1', title: 'Arrive Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel.', image: 'ghandruk.png' },
-            { day: 'Day 2', title: 'Trek Preparation Day', desc: 'Rest and prepare for trek.', image: 'ghandruk.png' },
-            { day: 'Day 3', title: 'Drive to Machhakhola', desc: 'Drive to trailhead (8hrs).', image: 'annapurna.jpg' },
-            { day: 'Day 4', title: 'Trek to Jagat', desc: 'Trek along Budhi Gandaki River.', image: 'annapurna.jpg' },
-            { day: 'Day 5', title: 'Trek to Lok Pa', desc: 'Enter Tsum Valley side trail.', image: 'annapurna.jpg' },
-            { day: 'Day 6', title: 'Trek to Chumling', desc: 'Trek through Tsum Valley.', image: 'annapurna.jpg' },
-            { day: 'Day 7', title: 'Trek to Chukkum Paro', desc: 'Continue deeper into Tsum Valley.', image: 'annapurna.jpg' },
-            { day: 'Day 8', title: 'Trek to Nile/Chule', desc: 'Reach the heart of Tsum Valley.', image: 'annapurna.jpg' },
-            { day: 'Day 9', title: 'Mu Gompa & Return', desc: 'Visit Mu Gompa and Tibetan border area. Return to Nile.', image: 'annapurna.jpg' },
-            { day: 'Day 10', title: 'Trek to Chumling', desc: 'Begin exit from Tsum Valley.', image: 'annapurna.jpg' },
-            { day: 'Day 11', title: 'Trek to Deng', desc: 'Rejoin Manaslu Circuit trail.', image: 'annapurna.jpg' },
-            { day: 'Day 12', title: 'Trek to Namrung', desc: 'Trek to Namrung.', image: 'annapurna.jpg' },
-            { day: 'Day 13', title: 'Trek to Lho', desc: 'Views of Manaslu.', image: 'annapurna.jpg' },
-            { day: 'Day 14', title: 'Trek to Samagaon', desc: 'Trek to Samagaon.', image: 'annapurna.jpg' },
-            { day: 'Day 15', title: 'Acclimatization Day', desc: 'Rest and acclimatize.', image: 'annapurna.jpg' },
-            { day: 'Day 16', title: 'Trek to Samdo', desc: 'Trek to Samdo.', image: 'annapurna.jpg' },
-            { day: 'Day 17', title: 'Trek to Dharmasala', desc: 'Trek to Dharmasala.', image: 'annapurna.jpg' },
-            { day: 'Day 18', title: 'Cross Larkya La to Bimtang', desc: 'Cross Larkya La Pass (5,100m). Descend to Bimtang.', image: 'annapurna.jpg' },
-            { day: 'Day 19', title: 'Trek to Dharapani', desc: 'Descend to Dharapani.', image: 'annapurna.jpg' },
-            { day: 'Day 20', title: 'Drive to Kathmandu', desc: 'Drive back to Kathmandu.', image: 'pokhara.jpg' },
-            { day: 'Day 21', title: 'Departure', desc: 'Transfer to airport. Tour ends.', image: 'ghandruk.png' }
+            { day: 'Day 1', title: 'Arrive Kathmandu', desc: 'Arrive Kathmandu. Transfer to hotel.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 2', title: 'Trek Preparation Day', desc: 'Rest and prepare for trek.', image: 'ghandruk.png', region: 'Kathmandu' },
+            { day: 'Day 3', title: 'Drive to Machhakhola', desc: 'Drive to trailhead (8hrs).', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 4', title: 'Trek to Jagat', desc: 'Trek along Budhi Gandaki River.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 5', title: 'Trek to Lok Pa', desc: 'Enter Tsum Valley side trail.', image: 'annapurna.jpg', region: 'Tsum Valley' },
+            { day: 'Day 6', title: 'Trek to Chumling', desc: 'Trek through Tsum Valley.', image: 'annapurna.jpg', region: 'Tsum Valley' },
+            { day: 'Day 7', title: 'Trek to Chukkum Paro', desc: 'Continue deeper into Tsum Valley.', image: 'annapurna.jpg', region: 'Tsum Valley' },
+            { day: 'Day 8', title: 'Trek to Nile/Chule', desc: 'Reach the heart of Tsum Valley.', image: 'annapurna.jpg', region: 'Tsum Valley' },
+            { day: 'Day 9', title: 'Mu Gompa & Return', desc: 'Visit Mu Gompa and Tibetan border area. Return to Nile.', image: 'annapurna.jpg', region: 'Tsum Valley' },
+            { day: 'Day 10', title: 'Trek to Chumling', desc: 'Begin exit from Tsum Valley.', image: 'annapurna.jpg', region: 'Tsum Valley' },
+            { day: 'Day 11', title: 'Trek to Deng', desc: 'Rejoin Manaslu Circuit trail.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 12', title: 'Trek to Namrung', desc: 'Trek to Namrung.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 13', title: 'Trek to Lho', desc: 'Views of Manaslu.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 14', title: 'Trek to Samagaon', desc: 'Trek to Samagaon.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 15', title: 'Acclimatization Day', desc: 'Rest and acclimatize.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 16', title: 'Trek to Samdo', desc: 'Trek to Samdo.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 17', title: 'Trek to Dharmasala', desc: 'Trek to Dharmasala.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 18', title: 'Cross Larkya La to Bimtang', desc: 'Cross Larkya La Pass (5,100m). Descend to Bimtang.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 19', title: 'Trek to Dharapani', desc: 'Descend to Dharapani.', image: 'annapurna.jpg', region: 'Manaslu' },
+            { day: 'Day 20', title: 'Drive to Kathmandu', desc: 'Drive back to Kathmandu.', image: 'pokhara.jpg', region: 'Kathmandu' },
+            { day: 'Day 21', title: 'Departure', desc: 'Transfer to airport. Tour ends.', image: 'ghandruk.png', region: 'Kathmandu' }
         ],
         includes: ['Experienced trekking guide', 'All accommodation', 'All meals during trek', 'Tsum Valley Special Permit', 'Manaslu Conservation Permit', 'All transportation', 'Porter service']
     },
@@ -1066,15 +1066,40 @@ function openItinerary(tourId) {
     const content = document.getElementById('itineraryContent');
     const isUSD = userOrigin === 'foreign';
 
-    let itineraryHTML = (tour.itinerary || []).map(day => `
-        <div class="itinerary-day">
-            <div class="day-image"><img src="${day.image}" alt="${day.title}"></div>
-            <div class="day-info">
-                <span class="day-badge">${day.day}</span>
-                <h4>${day.title}</h4>
-                <p>${day.desc}</p>
-            </div>
-        </div>`).join('');
+    const hasRegions = tour.itinerary && tour.itinerary.some(day => day.region);
+
+    let itineraryHTML;
+    if (hasRegions) {
+        const grouped = {};
+        tour.itinerary.forEach(day => {
+            const r = day.region || 'Other';
+            if (!grouped[r]) grouped[r] = [];
+            grouped[r].push(day);
+        });
+        itineraryHTML = Object.entries(grouped).map(([region, days]) => `
+            <div class="itinerary-region">
+                <h4 class="region-header"><i class="fas fa-map-marker-alt"></i> ${region}</h4>
+                ${days.map(day => `
+                    <div class="itinerary-day">
+                        <div class="day-image"><img src="${day.image}" alt="${day.title}"></div>
+                        <div class="day-info">
+                            <span class="day-badge">${day.day}</span>
+                            <h4>${day.title}</h4>
+                            <p>${day.desc}</p>
+                        </div>
+                    </div>`).join('')}
+            </div>`).join('');
+    } else {
+        itineraryHTML = (tour.itinerary || []).map(day => `
+            <div class="itinerary-day">
+                <div class="day-image"><img src="${day.image}" alt="${day.title}"></div>
+                <div class="day-info">
+                    <span class="day-badge">${day.day}</span>
+                    <h4>${day.title}</h4>
+                    <p>${day.desc}</p>
+                </div>
+            </div>`).join('');
+    }
 
     let includesHTML = (tour.includes || []).map(item => `<li><i class="fas fa-check-circle"></i> ${item}</li>`).join('');
     let highlightsHTML = (tour.highlights || []).map(item => `<span class="highlight-tag">${item}</span>`).join('');
