@@ -2745,6 +2745,13 @@ input:checked + .slider:before { transform: translateX(26px); }
     .admin-bookings { padding: 12px 15px; }
 }
 
+/* Brochure Responsive */
+.brochure-grid { grid-template-columns: 1fr; max-width: 100%; }
+.brochure-admin-grid { grid-template-columns: 1fr; }
+.brochure-preview { height: 200px; }
+.brochure-card { padding: 20px; }
+.brochure-section { padding: 50px 0; }
+
 /* === MOBILE (max-width: 480px) === */
 @media (max-width: 480px) {
     /* General */
@@ -2913,6 +2920,10 @@ input:checked + .slider:before { transform: translateX(26px); }
     .footer-content { grid-template-columns: 1fr; }
     .package-features li { font-size: 0.78rem; }
     .admin-sidebar { width: 240px; }
+    .brochure-preview { height: 180px; }
+    .brochure-card { padding: 15px; }
+    .brochure-admin-card { padding: 15px; }
+    .brochure-admin-preview { height: 150px; }
 }
 
 /* === LANDSCAPE MOBILE === */
