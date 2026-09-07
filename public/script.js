@@ -352,6 +352,36 @@ const defaultSettings = {
     aboutDesc: 'Adventure Hunt Treks Pvt. Ltd. is a government-registered trekking and tour operator based in Suryabinayak, Bhaktapur, Nepal.'
 };
 
+// ===== AUDIENCE MAP =====
+const packageAudience = {
+    // Nepali only (domestic tours from website itinerary folder)
+    'chitwan-wildlife': 'nepali',
+    'chitwan-adventure': 'nepali',
+    'chitwan-lumbini': 'nepali',
+    'janakpur-chitwan': 'nepali',
+    'lumbini-chitwan': 'nepali',
+    'pokhara-ghandruk': 'nepali',
+    'chitlang': 'nepali',
+    'suping-chitlang': 'nepali',
+    'kathmandu-heritage': 'nepali',
+    'pathibhara': 'nepali',
+    'rara-lake': 'nepali',
+    'sikles': 'nepali',
+    // Both Nepali and Foreigner (trekking packages in both folders)
+    'annapurna': 'both',
+    'poonhill': 'both',
+    'poonhill-ghandruk': 'both',
+    'dhampus': 'both',
+    'australian-camp': 'both',
+    'ghandruk': 'both',
+    'manang': 'both',
+    'manang-extended': 'both',
+    'muktinath': 'both',
+    'muktinath-extended': 'both',
+    'mustang': 'both',
+    'mustang-extended': 'both'
+};
+
 // ===== STATE =====
 let userOrigin = null;
 let currentFilter = 'all';
@@ -524,6 +554,10 @@ function renderDynamicPackages() {
     const frag = document.createDocumentFragment();
 
     Object.entries(pkgs).forEach(([id, pkg]) => {
+        const audience = packageAudience[id] || 'both';
+        if (userOrigin === 'nepal' && audience === 'foreigner') return;
+        if (userOrigin === 'foreign' && audience === 'nepali') return;
+
         const div = document.createElement('div');
         div.className = 'package-card';
         div.dataset.category = pkg.category;
@@ -560,12 +594,10 @@ function renderDynamicPackages() {
     grid.appendChild(frag);
     contactSelect.innerHTML = options;
 
-    // Re-init filter buttons
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() { filterPackages(this.dataset.filter); });
     });
 
-    // Re-init book buttons
     updatePriceDisplay();
     if (currentFilter !== 'all') filterPackages(currentFilter);
 }
@@ -629,10 +661,28 @@ function selectOrigin(origin, el) {
     sessionStorage.setItem('userOrigin', origin);
     document.querySelectorAll('.origin-card').forEach(c => c.classList.remove('selected'));
     el.classList.add('selected');
-    setTimeout(() => { hideModal(); updatePriceDisplay(); }, 300);
+    setTimeout(() => {
+        hideModal();
+        renderDynamicPackages();
+        updatePriceDisplay();
+        filterPackages('all');
+    }, 300);
 }
 
-function skipSelection() { userOrigin = 'all'; sessionStorage.setItem('userOrigin', 'all'); hideModal(); updatePriceDisplay(); }
+function skipSelection() {
+    userOrigin = 'all';
+    sessionStorage.setItem('userOrigin', 'all');
+    hideModal();
+    renderDynamicPackages();
+    updatePriceDisplay();
+    filterPackages('all');
+}
+
+function switchOrigin() {
+    userOrigin = null;
+    sessionStorage.removeItem('userOrigin');
+    showModal();
+}
 
 // ===== PRICE DISPLAY =====
 function updatePriceDisplay() {
@@ -641,12 +691,16 @@ function updatePriceDisplay() {
     document.querySelectorAll('.usd-price').forEach(el => el.style.display = isUSD ? 'inline' : 'none');
     const toggle = document.getElementById('priceToggle');
     if (toggle) toggle.checked = isUSD;
-}
-
-function togglePrice() {
-    const toggle = document.getElementById('priceToggle');
-    userOrigin = toggle.checked ? 'foreign' : 'nepal';
-    updatePriceDisplay();
+    const switchLink = document.getElementById('switchOriginLink');
+    if (switchLink) {
+        if (userOrigin === 'nepal') {
+            switchLink.textContent = 'Switch to Foreigner';
+        } else if (userOrigin === 'foreign') {
+            switchLink.textContent = 'Switch to Nepali';
+        } else {
+            switchLink.textContent = '';
+        }
+    }
 }
 
 // ===== FILTER PACKAGES =====

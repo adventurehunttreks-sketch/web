@@ -30,7 +30,7 @@
         </div>
     </nav>
 
-    <!-- Currency Selection Modal -->
+    <!-- User Type Selection Modal -->
     <div class="modal-overlay" id="originModal">
         <div class="modal">
             <div class="modal-logo">
@@ -38,18 +38,18 @@
             </div>
             <div class="modal-header">
                 <h2>Welcome to Adventure Hunt Treks</h2>
-                <p>Choose your preferred currency to view prices</p>
+                <p>Where are you from?</p>
             </div>
             <div class="modal-cards">
                 <div class="origin-card nepal-card" onclick="selectOrigin('nepal', this)">
                     <div class="origin-icon">🇳🇵</div>
-                    <h3>NPR</h3>
-                    <p>View prices in Nepali Rupees</p>
+                    <h3>Nepali</h3>
+                    <p>View packages for Nepali travelers</p>
                 </div>
                 <div class="origin-card foreign-card" onclick="selectOrigin('foreign', this)">
-                    <div class="origin-icon">💵</div>
-                    <h3>USD</h3>
-                    <p>View prices in US Dollars</p>
+                    <div class="origin-icon">🌍</div>
+                    <h3>Foreigner</h3>
+                    <p>View packages for international travelers</p>
                 </div>
             </div>
             <button class="skip-btn" onclick="skipSelection()">Skip & See All Packages</button>
@@ -176,14 +176,9 @@
                 <button class="filter-btn" data-filter="combo">⭐ Combo</button>
             </div>
 
-            <!-- Price Toggle -->
+            <!-- Switch Origin -->
             <div class="price-toggle">
-                <span class="toggle-label" id="npr-label">🇳🇵 NPR</span>
-                <label class="switch">
-                    <input type="checkbox" id="priceToggle" onchange="togglePrice()">
-                    <span class="slider"></span>
-                </label>
-                <span class="toggle-label" id="usd-label">🇺🇸 USD</span>
+                <a href="javascript:void(0)" id="switchOriginLink" onclick="switchOrigin()" class="switch-origin-link"></a>
             </div>
 
             <div class="packages-grid" id="packages-grid">

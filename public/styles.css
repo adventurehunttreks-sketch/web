@@ -587,6 +587,22 @@ body {
     margin-bottom: 40px;
 }
 
+.switch-origin-link {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.switch-origin-link:hover {
+    background: var(--primary);
+    color: white;
+}
+
 .toggle-label {
     font-weight: 600;
     color: var(--dark);
