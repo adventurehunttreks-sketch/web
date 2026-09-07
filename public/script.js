@@ -993,6 +993,21 @@ function switchOrigin() {
     showModal();
 }
 
+function filterContactPackages() {
+    const visitorType = document.getElementById('visitor-type').value;
+    const pkgSelect = document.getElementById('package');
+    const pkgs = getPackages();
+    let html = '<option value="">Select a package</option>';
+    Object.entries(pkgs).forEach(([id, pkg]) => {
+        const audience = packageAudience[id] || 'both';
+        if (visitorType === 'nepal' && audience === 'foreigner') return;
+        if (visitorType === 'foreign' && audience === 'nepali') return;
+        html += '<option value="' + id + '">' + pkg.name + ' (' + pkg.duration + ')</option>';
+    });
+    html += '<option value="custom">Customized Tour</option>';
+    pkgSelect.innerHTML = html;
+}
+
 // ===== PRICE DISPLAY =====
 function updatePriceDisplay() {
     const isUSD = userOrigin === 'foreign';

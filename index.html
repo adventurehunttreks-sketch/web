@@ -639,11 +639,11 @@ i<!DOCTYPE html>
                                 <input type="tel" id="phone" placeholder="Enter your phone">
                             </div>
                             <div class="form-group">
-                                <label for="visitor-type">Are you from Nepal?</label>
-                                <select id="visitor-type">
+                                <label for="visitor-type">Plan your trip</label>
+                                <select id="visitor-type" onchange="filterContactPackages()">
                                     <option value="">Select</option>
-                                    <option value="nepal">Yes, I'm from Nepal</option>
-                                    <option value="foreign">No, I'm visiting Nepal</option>
+                                    <option value="nepal">Nepali</option>
+                                    <option value="foreign">International</option>
                                 </select>
                             </div>
                         </div>
@@ -651,19 +651,6 @@ i<!DOCTYPE html>
                             <label for="package">Interested Package</label>
                             <select id="package">
                                 <option value="">Select a package</option>
-                                <option value="chitwan-adventure">Chitwan Adventure Tour</option>
-                                <option value="chitwan-wildlife">Chitwan Wildlife Tour</option>
-                                <option value="jungle-safari">Jungle Safari Tour</option>
-                                <option value="chitwan-lumbini">Chitwan Lumbini Tour</option>
-                                <option value="pokhara">Pokhara Adventure</option>
-                                <option value="kathmandu">Kathmandu Heritage Tour</option>
-                                <option value="lumbini">Lumbini Tour</option>
-                                <option value="muktinath">Muktinath Pilgrimage</option>
-                                <option value="poonhill">Poon Hill Trek</option>
-                                <option value="langtang">Langtang Valley Trek</option>
-                                <option value="annapurna">Annapurna Base Camp</option>
-                                <option value="mustang">Upper Mustang Trek</option>
-                                <option value="custom">Customized Tour</option>
                             </select>
                         </div>
                         <div class="form-row">
