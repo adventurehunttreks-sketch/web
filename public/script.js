@@ -333,7 +333,7 @@ const defaultPackages = {
     // ===== FOREIGNER PACKAGES (from foreigners folder) =====
     'annapurna-circuit-23d': {
         name: 'Annapurna Circuit Trek', duration: '22N / 23D', priceNPR: '85,000', priceUSD: '650',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Classic',
+        category: 'trek', audience: 'foreigner', region: 'annapurna', image: 'annapurna.jpg', badge: 'Classic',
         shortDesc: 'The ultimate Annapurna experience — cross the world\'s widest trekking pass Thorong La (5,416m), traverse from subtropical forests to ice flows, visit Muktinath Temple, Tatopani hot springs, and Poon Hill viewpoint.',
         highlights: ['Thorong La Pass (5,416m)', 'Muktinath Temple', 'Tatopani Hot Springs', 'Poon Hill Viewpoint', 'Marpha Village', 'Tea House Trek'],
         itinerary: [
@@ -365,7 +365,7 @@ const defaultPackages = {
     },
     'langtang-valley-10d': {
         name: 'Langtang Valley Trek', duration: '10N / 11D', priceNPR: '55,000', priceUSD: '420',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Glacier Valley',
+        category: 'trek', audience: 'foreigner', region: 'langtang', image: 'annapurna.jpg', badge: 'Glacier Valley',
         shortDesc: 'Trek to the "Valley of Glaciers" — no flight needed, just a scenic drive from Kathmandu. Hike to Tserko Ri (5,000m) for sunrise views, explore Kyanjin Gompa monastery, and experience Tamang/Sherpa Buddhist culture.',
         highlights: ['Tserko Ri (5,000m)', 'Kyanjin Gompa', 'Langtang Lirung Views', 'Tamang Culture', 'Yak Cheese Factory', 'No Flight Required'],
         itinerary: [
@@ -385,7 +385,7 @@ const defaultPackages = {
     },
     'langtang-tamang-heritage-9d': {
         name: 'Langtang Tamang Heritage Trail', duration: '9N / 10D', priceNPR: '48,000', priceUSD: '370',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Heritage',
+        category: 'trek', audience: 'foreigner', region: 'langtang', image: 'annapurna.jpg', badge: 'Heritage',
         shortDesc: 'Experience Tibetan-influenced hill tribes on the Tamang Heritage Trail — homestay in Briddim, natural hot springs at Tatopani, Ganesh Himal and Langtang Himalaya views, less crowded alternative.',
         highlights: ['Tamang Culture', 'Homestay in Briddim', 'Natural Hot Springs', 'Ganesh Himal Views', 'Less Crowded', 'Authentic Village Life'],
         itinerary: [
@@ -404,7 +404,7 @@ const defaultPackages = {
     },
     'langtang-circuit-20d': {
         name: 'Langtang Circuit Trek', duration: '20N / 21D', priceNPR: '75,000', priceUSD: '575',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Circuit',
+        category: 'trek', audience: 'foreigner', region: 'langtang', image: 'annapurna.jpg', badge: 'Circuit',
         shortDesc: 'Complete Langtang region circuit — Tamang Heritage Trail + Langtang Valley + Gosaikunda Lake + Helambu. Cross Lauribinayak La (4,610m), visit sacred Gosaikunda Lake, and explore diverse cultures.',
         highlights: ['Gosaikunda Lake (4,460m)', 'Lauribinayak La Pass', 'Kyanjin Gompa', 'Tamang Heritage', 'Helambu Region', 'Sacred Lakes'],
         itinerary: [
@@ -434,7 +434,7 @@ const defaultPackages = {
     },
     'langtang-gosaikunda-10d': {
         name: 'Langtang & Gosaikunda Trek', duration: '10N / 11D', priceNPR: '58,000', priceUSD: '445',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Sacred Lake',
+        category: 'trek', audience: 'foreigner', region: 'langtang', image: 'annapurna.jpg', badge: 'Sacred Lake',
         shortDesc: 'Combine Langtang Valley with sacred Gosaikunda Lake — hike to Tserko Ri (5,000m), visit Kyanjin Gompa, and trek to the holy alpine lake at 4,380m. Diverse landscapes from valleys to high passes.',
         highlights: ['Gosaikunda Lake (4,380m)', 'Tserko Ri (5,000m)', 'Kyanjin Gompa', 'Langtang Valley', 'Laurebina La Pass', 'Sacred Pilgrimage'],
         itinerary: [
@@ -454,7 +454,7 @@ const defaultPackages = {
     },
     'helambu-10d': {
         name: 'Helambu Trek', duration: '10N / 11D', priceNPR: '45,000', priceUSD: '345',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Near Kathmandu',
+        category: 'trek', audience: 'foreigner', region: 'langtang', image: 'annapurna.jpg', badge: 'Near Kathmandu',
         shortDesc: 'Short and easy trek near Kathmandu through Tamang Hyolmo culture — Buddhist monasteries, rhododendron forests, panoramic landscapes from Annapurna to Everest, exotic flora and fauna.',
         highlights: ['Near Kathmandu', 'Tamang Hyolmo Culture', 'Buddhist Monasteries', 'Rhododendron Forests', 'Panoramic Views', 'Easy Grade'],
         itinerary: [
@@ -474,7 +474,7 @@ const defaultPackages = {
     },
     'manaslu-circuit-18d': {
         name: 'Manaslu Circuit Trek', duration: '18N / 19D', priceNPR: '95,000', priceUSD: '730',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Remote',
+        category: 'trek', audience: 'foreigner', region: 'manaslu', image: 'annapurna.jpg', badge: 'Remote',
         shortDesc: 'Circle the world\'s 8th highest mountain — cross Larkya La Pass (5,135m), experience remote off-the-beaten-path trekking through pristine forests and glaciers with Tibetan Buddhist culture.',
         highlights: ['Larkya La Pass (5,135m)', 'Manaslu (8,156m)', 'Remote Trekking', 'Tibetan Buddhist Culture', 'Snow Leopard Habitat', 'Restricted Area'],
         itinerary: [
@@ -502,7 +502,7 @@ const defaultPackages = {
     },
     'manaslu-tsum-valley-20d': {
         name: 'Manaslu Circuit & Tsum Valley', duration: '20N / 21D', priceNPR: '110,000', priceUSD: '845',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Hidden Valley',
+        category: 'trek', audience: 'foreigner', region: 'manaslu', image: 'annapurna.jpg', badge: 'Hidden Valley',
         shortDesc: 'Explore the hidden Tsum Valley (opened 2008) and cross Larkya La — walk to Tibetan border, visit ancient monasteries, Milarepa\'s Cave, and experience pristine Tsumba community culture.',
         highlights: ['Tsum Valley (Hidden Valley)', 'Larkya La Pass (5,106m)', 'Milarepa\'s Cave', 'Mu Gompa', 'Tibetan Border', 'Ancient Monasteries'],
         itinerary: [
@@ -532,7 +532,7 @@ const defaultPackages = {
     },
     'mardi-himal': {
         name: 'Mardi Himal Trek', duration: '7N / 8D', priceNPR: '38,000', priceUSD: '290',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Off beaten path',
+        category: 'trek', audience: 'foreigner', region: 'annapurna', image: 'annapurna.jpg', badge: 'Off beaten path',
         shortDesc: 'Less-crowded alternative in the Annapurna region — stunning views of Machhapuchhre (Fishtail), Annapurna South, Hiunchuli, and Mardi Himal. Perfect for those seeking solitude.',
         highlights: ['Machhapuchhre (Fishtail)', 'Annapurna South Views', 'Off the Beaten Path', 'Low Crowd', 'Rhododendron Forests', 'Mountain Sunrise'],
         itinerary: [
@@ -549,7 +549,7 @@ const defaultPackages = {
     },
     'nar-phu-valley-16d': {
         name: 'Nar Phu Valley Trek', duration: '16D', priceNPR: '72,000', priceUSD: '555',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Restricted',
+        category: 'trek', audience: 'foreigner', region: 'annapurna', image: 'annapurna.jpg', badge: 'Restricted',
         shortDesc: 'Remote restricted area trek off the Annapurna Circuit through the hidden Nar and Phu valleys — pristine Tibetan Buddhist culture, dramatic landscapes, and few other trekkers.',
         highlights: ['Nar Valley', 'Phu Village', 'Restricted Area', 'Tibetan Buddhist Culture', 'Kang La Pass', 'Few Trekkers'],
         itinerary: [
@@ -574,7 +574,7 @@ const defaultPackages = {
     },
     'tsum-valley': {
         name: 'Tsum Valley Trek', duration: '14N / 15D', priceNPR: '65,000', priceUSD: '500',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Sacred Valley',
+        category: 'trek', audience: 'foreigner', region: 'manaslu', image: 'annapurna.jpg', badge: 'Sacred Valley',
         shortDesc: 'Sacred Himalayan pilgrimage valley opened to trekkers in 2008 — close to Tibet border, Milarepa\'s Cave, unique Tsumba community, pristine culture, ancient monasteries and gompas.',
         highlights: ['Tsum Valley (Sacred)', 'Milarepa\'s Cave', 'Tibetan Border', 'Ancient Monasteries', 'Tsumba Community', 'Pristine Culture'],
         itinerary: [
@@ -598,7 +598,7 @@ const defaultPackages = {
     },
     'everest-base-camp': {
         name: 'Everest Base Camp Trek', duration: '14N / 15D', priceNPR: '120,000', priceUSD: '920',
-        category: 'trek', audience: 'foreigner', image: 'annapurna.jpg', badge: 'Everest',
+        category: 'trek', audience: 'foreigner', region: 'everest', image: 'annapurna.jpg', badge: 'Everest',
         shortDesc: 'The iconic Everest Base Camp trek — fly to Lukla, trek through Sherpa villages, cross suspension bridges, visit Tengboche Monastery, and stand at the base of the world\'s highest mountain.',
         highlights: ['Everest Base Camp (5,364m)', 'Kala Patthar (5,545m)', 'Tengboche Monastery', 'Sherpa Culture', 'Lukla Flight', 'Khumbu Glacier'],
         itinerary: [
@@ -854,9 +854,28 @@ function renderDynamicPackages() {
     const contactSelect = document.getElementById('package');
     const filterTabs = document.querySelector('.filter-tabs');
 
-    // Hide filter tabs for foreigners, show all packages
-    if (filterTabs) {
-        filterTabs.style.display = userOrigin === 'foreign' ? 'none' : 'flex';
+    if (userOrigin === 'foreign') {
+        // Show region-based filters for foreigners
+        filterTabs.style.display = 'flex';
+        filterTabs.innerHTML = `
+            <button class="filter-btn active" data-filter="all">All Treks</button>
+            <button class="filter-btn" data-filter="annapurna">🏔️ Annapurna</button>
+            <button class="filter-btn" data-filter="langtang">⛰️ Langtang</button>
+            <button class="filter-btn" data-filter="everest">🗻 Everest</button>
+            <button class="filter-btn" data-filter="manaslu">🏔️ Manaslu</button>
+        `;
+    } else {
+        // Show category-based filters for Nepali
+        filterTabs.style.display = 'flex';
+        filterTabs.innerHTML = `
+            <button class="filter-btn active" data-filter="all">All Packages</button>
+            <button class="filter-btn" data-filter="chitwan">🌿 Chitwan</button>
+            <button class="filter-btn" data-filter="pokhara">🏔️ Pokhara</button>
+            <button class="filter-btn" data-filter="heritage">🏛️ Heritage</button>
+            <button class="filter-btn" data-filter="trek">🥾 Trekking</button>
+            <button class="filter-btn" data-filter="adventure">🎯 Adventure</button>
+            <button class="filter-btn" data-filter="combo">⭐ Combo</button>
+        `;
     }
 
     let options = '<option value="">Select a package</option>';
@@ -869,7 +888,7 @@ function renderDynamicPackages() {
 
         const div = document.createElement('div');
         div.className = 'package-card';
-        div.dataset.category = pkg.category;
+        div.dataset.category = userOrigin === 'foreign' ? (pkg.region || 'all') : pkg.category;
         div.dataset.id = id;
         div.innerHTML = `
             <div class="package-image" style="background: url('${pkg.image}') center/cover;">
