@@ -799,7 +799,7 @@ function getAdminDestinations() {
 function saveAdminDestinations(dests) { _adminCache.destinations = dests; _debouncedSave('aht_admin_destinations', dests, 200); }
 
 // ===== INITIALIZATION =====
-const DATA_VERSION = '5.0';
+const DATA_VERSION = '6.0';
 document.addEventListener('DOMContentLoaded', function() {
     // Clear cache if version changed
     const savedVersion = localStorage.getItem('aht_version');
