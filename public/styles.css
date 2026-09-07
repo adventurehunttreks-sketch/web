@@ -1002,6 +1002,78 @@ input:checked + .slider:before { transform: translateX(26px); }
 .booking-success h3 { margin-bottom: 15px; color: var(--dark); }
 .booking-success p { color: var(--gray); margin-bottom: 15px; }
 
+/* Brochure Section */
+.brochure-section {
+    padding: 80px 0;
+    background: var(--light);
+}
+
+.brochure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.brochure-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.brochure-card h3 {
+    margin-bottom: 20px;
+    color: var(--dark);
+    font-size: 1.2rem;
+}
+
+.brochure-card h3 i {
+    color: var(--primary);
+    margin-right: 8px;
+}
+
+.brochure-preview {
+    width: 100%;
+    height: 250px;
+    border: 2px dashed var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: var(--light);
+}
+
+.brochure-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.brochure-placeholder {
+    color: var(--gray);
+    text-align: center;
+    line-height: 1.8;
+}
+
+.brochure-placeholder i {
+    font-size: 2.5rem;
+    color: var(--border);
+    margin-bottom: 10px;
+}
+
+.brochure-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .contact-direct {
     background: var(--light);
     padding: 15px;

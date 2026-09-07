@@ -824,6 +824,8 @@ document.addEventListener('DOMContentLoaded', function() {
     renderDynamicPackages();
     renderDynamicDestinations();
     updatePriceDisplay();
+    loadBrochures();
+    updateBrochureVisibility();
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() { filterPackages(this.dataset.filter); });
@@ -993,6 +995,7 @@ function selectOrigin(origin, el) {
         hideModal();
         renderDynamicPackages();
         updatePriceDisplay();
+        updateBrochureVisibility();
         filterPackages('all');
     }, 300);
 }
@@ -1003,6 +1006,7 @@ function skipSelection() {
     hideModal();
     renderDynamicPackages();
     updatePriceDisplay();
+    updateBrochureVisibility();
     filterPackages('all');
 }
 
@@ -1025,6 +1029,65 @@ function filterContactPackages() {
     });
     html += '<option value="custom">Customized Tour</option>';
     pkgSelect.innerHTML = html;
+}
+
+// ===== BROCHURE SYSTEM =====
+function handleBrochureUpload(side, input) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const dataUrl = e.target.result;
+        localStorage.setItem('aht_brochure_' + side, dataUrl);
+        displayBrochure(side, dataUrl);
+    };
+    reader.readAsDataURL(file);
+}
+
+function displayBrochure(side, dataUrl) {
+    const preview = document.getElementById('brochure' + (side === 'front' ? 'Front' : 'Back') + 'Preview');
+    const viewBtn = document.getElementById('brochure' + (side === 'front' ? 'Front' : 'Back') + 'View');
+    const dlBtn = document.getElementById('brochure' + (side === 'front' ? 'Front' : 'Back') + 'Download');
+    if (preview) preview.innerHTML = '<img src="' + dataUrl + '" alt="Brochure ' + side + '">';
+    if (viewBtn) viewBtn.style.display = 'inline-flex';
+    if (dlBtn) dlBtn.style.display = 'inline-flex';
+}
+
+function viewBrochure(side) {
+    const dataUrl = localStorage.getItem('aht_brochure_' + side);
+    if (dataUrl) {
+        const win = window.open('', '_blank');
+        win.document.write('<html><head><title>Brochure ' + side + '</title><style>body{margin:0;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#f5f5f5;}img{max-width:100%;max-height:100vh;}</style></head><body><img src="' + dataUrl + '" alt="Brochure"></body></html>');
+    }
+}
+
+function downloadBrochure(side) {
+    const dataUrl = localStorage.getItem('aht_brochure_' + side);
+    if (dataUrl) {
+        const a = document.createElement('a');
+        a.href = dataUrl;
+        a.download = 'AdventureHuntTreks_Brochure_' + side + '.png';
+        a.click();
+    }
+}
+
+function loadBrochures() {
+    const front = localStorage.getItem('aht_brochure_front');
+    const back = localStorage.getItem('aht_brochure_back');
+    if (front) displayBrochure('front', front);
+    if (back) displayBrochure('back', back);
+}
+
+function updateBrochureVisibility() {
+    const brochureLink = document.getElementById('brochureNavLink');
+    const brochureSection = document.getElementById('brochure');
+    if (userOrigin === 'nepal') {
+        if (brochureLink) brochureLink.style.display = 'inline';
+        if (brochureSection) brochureSection.style.display = 'block';
+    } else {
+        if (brochureLink) brochureLink.style.display = 'none';
+        if (brochureSection) brochureSection.style.display = 'none';
+    }
 }
 
 // ===== PRICE DISPLAY =====
@@ -1908,6 +1971,7 @@ function getChatReply(input) {
         updateChatQuickActions(false);
         renderDynamicPackages();
         updatePriceDisplay();
+        updateBrochureVisibility();
         return 'Great! You\'re from Nepal. I\'ll show you our <strong>Nepali packages</strong> with NPR prices.<br><br>We have <strong>24 packages</strong> across Chitwan, Pokhara, Kathmandu, Lumbini & trekking routes.<br><br>What would you like to know about?';
     }
     if (msg.match(/\b(i am international|international|foreign|from abroad|tourist)\b/)) {
@@ -1916,6 +1980,7 @@ function getChatReply(input) {
         updateChatQuickActions(true);
         renderDynamicPackages();
         updatePriceDisplay();
+        updateBrochureVisibility();
         return 'Welcome, international traveler! I\'ll show you our <strong>international trek packages</strong> with USD prices.<br><br>We have <strong>12 treks</strong> across Annapurna, Langtang, Everest & Manaslu regions.<br><br>Which region interests you?';
     }
 
