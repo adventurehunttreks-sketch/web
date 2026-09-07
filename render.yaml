@@ -1,0 +1,9 @@
+services:
+  - type: static_site
+    name: adventure-hunt-treks
+    buildCommand: echo "Static site - no build needed"
+    staticPublishPath: ./public
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
