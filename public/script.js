@@ -634,7 +634,7 @@ const defaultDestinations = [
 const defaultSettings = {
     heroTitle: 'Adventure Awaits in Nepal',
     heroSub: 'Your trusted partner for treks, tours & wildlife adventures',
-    phone: '+977-9851134076',
+    phone: '+977-9843317956',
     email: 'adventurehunttreks@gmail.com',
     address: 'Suryabinayak, Bhaktapur, Nepal',
     stat1: '20+', stat2: '10,000+', stat3: '4.9/5', stat4: '100%',
@@ -2001,7 +2001,7 @@ function getChatReply(input) {
         return 'Our international treks cover <strong>4 major regions</strong>:<br><br>&#8226; <strong>Annapurna</strong> — Classic circuit, Mardi Himal, Nar Phu Valley<br>&#8226; <strong>Langtang</strong> — Valley, Tamang Heritage, Circuit, Gosaikunda, Helambu<br>&#8226; <strong>Everest</strong> — Base Camp trek<br>&#8226; <strong>Manaslu</strong> — Circuit, Tsum Valley<br><br>Each region offers unique landscapes and cultures. Which one interests you?';
     }
     if (msg.match(/\b(booking|book|reserve|inquiry|how to book|process)\b/)) {
-        return 'Booking is easy! Here\'s how:<br><br>1. Choose your package from our <a href="#packages">Packages section</a><br>2. Click "Book Now" or "View Itinerary" then "Book This Tour"<br>3. Fill in your contact details<br>4. Our team will confirm within <strong>24 hours</strong><br><br>You can also call us directly at <strong>+977-9851134076</strong> or email <strong>adventurehunttreks@gmail.com</strong>';
+        return 'Booking is easy! Here\'s how:<br><br>1. Choose your package from our <a href="#packages">Packages section</a><br>2. Click "Book Now" or "View Itinerary" then "Book This Tour"<br>3. Fill in your contact details<br>4. Our team will confirm within <strong>24 hours</strong><br><br>You can also call us directly at <strong>+977-9843317956</strong> or email <strong>adventurehunttreks@gmail.com</strong>';
     }
     if (msg.match(/\b(price|cost|expensive|cheap|budget|rate|npr|usd|dollar)\b/)) {
         if (isForeign) {
@@ -2026,7 +2026,7 @@ function getChatReply(input) {
         return 'Safety is our <strong>top priority</strong>!<br><br>&#8226; Government licensed & insured company<br>&#8226; Experienced certified guides<br>&#8226; First aid kits on all treks<br>&#8226; Emergency evacuation arrangements<br>&#8226; 100% safety record<br>&#8226; Comprehensive travel insurance guidance<br><br>Your safety is guaranteed with Adventure Hunt Treks.';
     }
     if (msg.match(/\b(thank|thanks|great|awesome|perfect|good)\b/)) {
-        return 'You\'re welcome! Happy to help. If you have any more questions, just ask. We\'re here to make your Nepal trip unforgettable! <br><br>Ready to book? <a href="#packages">Browse our packages</a> or call us at <strong>+977-9851134076</strong>.';
+        return 'You\'re welcome! Happy to help. If you have any more questions, just ask. We\'re here to make your Nepal trip unforgettable! <br><br>Ready to book? <a href="#packages">Browse our packages</a> or call us at <strong>+977-9843317956</strong>.';
     }
     if (msg.match(/\b(when|best time|season|month|weather|climate)\b/)) {
         if (isForeign) {
