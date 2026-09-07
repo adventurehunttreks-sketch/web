@@ -2197,3 +2197,132 @@ function clearChatLogs() {
     currentChat = [];
     loadChatLogs();
 }
+
+/* ========== GALLERY ========== */
+const galleryPhotos = {
+    nepali: [
+        'Nepali/21aacc1e-af93-4715-8f7e-82a646ff328d.JPG',
+        'Nepali/IMG_0248.HEIC',
+        'Nepali/IMG_0255.HEIC',
+        'Nepali/IMG_0261.HEIC',
+        'Nepali/IMG_1194.HEIC',
+        'Nepali/IMG_1683.HEIC',
+        'Nepali/IMG_20220306_144121_Original.jpg',
+        'Nepali/IMG_2430.HEIC',
+        'Nepali/IMG_2438.HEIC',
+        'Nepali/IMG_2706.heic',
+        'Nepali/IMG_2742.heic',
+        'Nepali/IMG_3800.heic',
+        'Nepali/IMG_6692.JPG',
+        'Nepali/IMG_6795.JPG',
+        'Nepali/IMG_6896.heic',
+        'Nepali/IMG_6990.heic',
+        'Nepali/IMG_6993.heic',
+        'Nepali/IMG_7290.heic',
+        'Nepali/IMG_7480.heic',
+        'Nepali/IMG_7543.heic',
+        'Nepali/IMG_7734.JPG',
+        'Nepali/IMG_7736.JPG',
+        'Nepali/IMG_8076.HEIC',
+        'Nepali/IMG_8090.HEIC',
+        'Nepali/IMG_9486.HEIC',
+        'Nepali/IMG_9588.HEIC',
+        'Nepali/IMG_9715.HEIC',
+        'Nepali/IMG_9720.HEIC'
+    ],
+    foreigners: [
+        'International/54eeeca2-cdcd-4810-a851-3796ed079939.JPG',
+        'International/FB_IMG_1670897944348_Original.jpg',
+        'International/GOPR7583.JPEG',
+        'International/IMG_1051.HEIC',
+        'International/IMG_1075.HEIC',
+        'International/IMG_1088.heic',
+        'International/IMG_1113.HEIC',
+        'International/IMG_1197.HEIC',
+        'International/IMG_1232.HEIC',
+        'International/IMG_1996.heic',
+        'International/IMG_2053.heic',
+        'International/IMG_2280.heic',
+        'International/IMG_2309.heic',
+        'International/IMG_2498.HEIC',
+        'International/IMG_2521.HEIC',
+        'International/IMG_2525.HEIC',
+        'International/IMG_2898.HEIC',
+        'International/IMG_5479.jpg',
+        'International/IMG_5480.jpg',
+        'International/IMG_6713.heic',
+        'International/IMG_6755.heic',
+        'International/IMG_8248.HEIC',
+        'International/IMG_8251.heic',
+        'International/IMG_8411.JPG',
+        'International/IMG_8441.HEIC',
+        'International/IMG_8847.HEIC'
+    ]
+};
+
+let currentGallery = 'nepali';
+let lightboxImages = [];
+let lightboxIndex = 0;
+
+function switchGallery(type, btn) {
+    currentGallery = type;
+    document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    renderGallery();
+}
+
+function renderGallery() {
+    const grid = document.getElementById('gallery-grid');
+    const photos = galleryPhotos[currentGallery] || [];
+
+    if (photos.length === 0) {
+        grid.innerHTML = '<div class="gallery-empty"><i class="fas fa-images"></i><p>No photos available yet.</p></div>';
+        return;
+    }
+
+    grid.innerHTML = photos.map((src, i) => `
+        <div class="gallery-item" onclick="openLightbox(${i})">
+            <img src="${src}" alt="Gallery Photo" loading="lazy" onerror="this.parentElement.style.display='none'">
+            <div class="gallery-overlay"><span><i class="fas fa-expand"></i> View</span></div>
+        </div>
+    `).join('');
+}
+
+function openLightbox(index) {
+    lightboxImages = galleryPhotos[currentGallery] || [];
+    lightboxIndex = index;
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = lightboxImages[lightboxIndex];
+    updateLightboxCounter();
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+    if (e.target === e.currentTarget || e.target.closest('.lightbox-close')) {
+        document.getElementById('lightbox').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+function navigateLightbox(dir, e) {
+    e.stopPropagation();
+    lightboxIndex = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+    document.getElementById('lightbox-img').src = lightboxImages[lightboxIndex];
+    updateLightboxCounter();
+}
+
+function updateLightboxCounter() {
+    document.getElementById('lightbox-counter').textContent = `${lightboxIndex + 1} / ${lightboxImages.length}`;
+}
+
+document.addEventListener('keydown', function(e) {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox || lightbox.style.display === 'none') return;
+    if (e.key === 'Escape') { lightbox.style.display = 'none'; document.body.style.overflow = ''; }
+    if (e.key === 'ArrowLeft') navigateLightbox(-1, e);
+    if (e.key === 'ArrowRight') navigateLightbox(1, e);
+});
+
+document.addEventListener('DOMContentLoaded', renderGallery);

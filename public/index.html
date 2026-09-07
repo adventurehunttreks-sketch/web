@@ -20,6 +20,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#packages">Packages</a></li>
                 <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#brochure" id="brochureNavLink" style="display:none;">Brochure</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -601,6 +602,38 @@
             </div>
         </div>
     </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Gallery</h2>
+                <p>Moments captured from our adventures</p>
+            </div>
+            <div class="gallery-tabs">
+                <button class="gallery-tab active" data-gallery="nepali" onclick="switchGallery('nepali', this)">
+                    <i class="fas fa-flag"></i> Nepali Travelers
+                </button>
+                <button class="gallery-tab" data-gallery="foreigners" onclick="switchGallery('foreigners', this)">
+                    <i class="fas fa-globe-americas"></i> International Travelers
+                </button>
+            </div>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Photos loaded dynamically by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" style="display:none;" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+        <button class="lightbox-prev" onclick="navigateLightbox(-1, event)"><i class="fas fa-chevron-left"></i></button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Gallery Photo">
+        </div>
+        <button class="lightbox-next" onclick="navigateLightbox(1, event)"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
 
     <!-- Parallax CTA -->
     <section class="parallax-cta">
