@@ -852,6 +852,12 @@ function renderDynamicPackages() {
     const pkgs = getPackages();
     const grid = document.getElementById('packages-grid');
     const contactSelect = document.getElementById('package');
+    const filterTabs = document.querySelector('.filter-tabs');
+
+    // Hide filter tabs for foreigners, show all packages
+    if (filterTabs) {
+        filterTabs.style.display = userOrigin === 'foreign' ? 'none' : 'flex';
+    }
 
     let options = '<option value="">Select a package</option>';
     const frag = document.createDocumentFragment();
