@@ -826,6 +826,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updatePriceDisplay();
     loadBrochures();
     updateBrochureVisibility();
+    renderGallery();
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() { filterPackages(this.dataset.filter); });
