@@ -130,10 +130,41 @@
                             <div>
                                 <h4>24/7 Support</h4>
                                 <p>Round-the-clock assistance</p>
-                            </div>
+                </div>
+            </div>
+
+            <!-- Brochure Admin Section -->
+            <div class="admin-section" id="section-brochure">
+                <div class="section-toolbar">
+                    <h3><i class="fas fa-file-image"></i> Manage Brochure</h3>
+                </div>
+                <p style="color: var(--gray); margin-bottom: 25px;">Upload brochure images (front and back). These will be visible to Nepali visitors in the Brochure section.</p>
+                <div class="brochure-admin-grid">
+                    <div class="brochure-admin-card">
+                        <h4><i class="fas fa-image"></i> Front Page</h4>
+                        <div class="brochure-admin-preview" id="adminBrochureFrontPreview">
+                            <p class="brochure-placeholder"><i class="fas fa-cloud-upload-alt"></i><br>No image uploaded</p>
                         </div>
+                        <label class="btn btn-primary" for="adminBrochureFrontUpload" style="cursor:pointer;">
+                            <i class="fas fa-upload"></i> Upload Front Page
+                        </label>
+                        <input type="file" id="adminBrochureFrontUpload" accept="image/*" style="display:none;" onchange="handleBrochureUpload('front', this)">
+                    </div>
+                    <div class="brochure-admin-card">
+                        <h4><i class="fas fa-image"></i> Back Page</h4>
+                        <div class="brochure-admin-preview" id="adminBrochureBackPreview">
+                            <p class="brochure-placeholder"><i class="fas fa-cloud-upload-alt"></i><br>No image uploaded</p>
+                        </div>
+                        <label class="btn btn-primary" for="adminBrochureBackUpload" style="cursor:pointer;">
+                            <i class="fas fa-upload"></i> Upload Back Page
+                        </label>
+                        <input type="file" id="adminBrochureBackUpload" accept="image/*" style="display:none;" onchange="handleBrochureUpload('back', this)">
                     </div>
                 </div>
+            </div>
+
+        </div>
+    </div>
                 <div class="about-contact-card">
                     <h3>Contact Us</h3>
                     <div class="contact-info-item">
@@ -618,21 +649,17 @@
         <div class="container">
             <div class="section-header">
                 <h2><i class="fas fa-file-pdf"></i> Our Brochure</h2>
-                <p>Download or view our complete tour brochure with all packages and pricing</p>
+                <p>View or download our complete tour brochure</p>
             </div>
             <div class="brochure-grid">
                 <div class="brochure-card">
                     <h3><i class="fas fa-image"></i> Front Page</h3>
                     <div class="brochure-preview" id="brochureFrontPreview">
-                        <p class="brochure-placeholder"><i class="fas fa-cloud-upload-alt"></i><br>Upload brochure front image</p>
+                        <p class="brochure-placeholder"><i class="fas fa-image"></i><br>Brochure front page</p>
                     </div>
                     <div class="brochure-actions">
-                        <label class="btn btn-primary" for="brochureFrontUpload">
-                            <i class="fas fa-upload"></i> Upload Front
-                        </label>
-                        <input type="file" id="brochureFrontUpload" accept="image/*" style="display:none;" onchange="handleBrochureUpload('front', this)">
-                        <button class="btn btn-outline" id="brochureFrontView" style="display:none;" onclick="viewBrochure('front')">
-                            <i class="fas fa-eye"></i> View
+                        <button class="btn btn-primary" id="brochureFrontView" style="display:none;" onclick="viewBrochure('front')">
+                            <i class="fas fa-eye"></i> View Full Size
                         </button>
                         <button class="btn btn-outline" id="brochureFrontDownload" style="display:none;" onclick="downloadBrochure('front')">
                             <i class="fas fa-download"></i> Download
@@ -642,15 +669,11 @@
                 <div class="brochure-card">
                     <h3><i class="fas fa-image"></i> Back Page</h3>
                     <div class="brochure-preview" id="brochureBackPreview">
-                        <p class="brochure-placeholder"><i class="fas fa-cloud-upload-alt"></i><br>Upload brochure back image</p>
+                        <p class="brochure-placeholder"><i class="fas fa-image"></i><br>Brochure back page</p>
                     </div>
                     <div class="brochure-actions">
-                        <label class="btn btn-primary" for="brochureBackUpload">
-                            <i class="fas fa-upload"></i> Upload Back
-                        </label>
-                        <input type="file" id="brochureBackUpload" accept="image/*" style="display:none;" onchange="handleBrochureUpload('back', this)">
-                        <button class="btn btn-outline" id="brochureBackView" style="display:none;" onclick="viewBrochure('back')">
-                            <i class="fas fa-eye"></i> View
+                        <button class="btn btn-primary" id="brochureBackView" style="display:none;" onclick="viewBrochure('back')">
+                            <i class="fas fa-eye"></i> View Full Size
                         </button>
                         <button class="btn btn-outline" id="brochureBackDownload" style="display:none;" onclick="downloadBrochure('back')">
                             <i class="fas fa-download"></i> Download
@@ -932,6 +955,9 @@
                 </button>
                 <button class="admin-nav-btn" data-section="chatlogs" onclick="switchAdminSection('chatlogs')">
                     <i class="fas fa-comments"></i> Chat Logs
+                </button>
+                <button class="admin-nav-btn" data-section="brochure" onclick="switchAdminSection('brochure')">
+                    <i class="fas fa-file-image"></i> Brochure
                 </button>
                 <button class="admin-nav-btn" data-section="sendemail" onclick="switchAdminSection('sendemail')">
                     <i class="fas fa-paper-plane"></i> Send Email

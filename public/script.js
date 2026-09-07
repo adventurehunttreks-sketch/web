@@ -1040,6 +1040,7 @@ function handleBrochureUpload(side, input) {
         const dataUrl = e.target.result;
         localStorage.setItem('aht_brochure_' + side, dataUrl);
         displayBrochure(side, dataUrl);
+        displayAdminBrochure(side, dataUrl);
     };
     reader.readAsDataURL(file);
 }
@@ -1051,6 +1052,11 @@ function displayBrochure(side, dataUrl) {
     if (preview) preview.innerHTML = '<img src="' + dataUrl + '" alt="Brochure ' + side + '">';
     if (viewBtn) viewBtn.style.display = 'inline-flex';
     if (dlBtn) dlBtn.style.display = 'inline-flex';
+}
+
+function displayAdminBrochure(side, dataUrl) {
+    const preview = document.getElementById('adminBrochure' + (side === 'front' ? 'Front' : 'Back') + 'Preview');
+    if (preview) preview.innerHTML = '<img src="' + dataUrl + '" alt="Brochure ' + side + '">';
 }
 
 function viewBrochure(side) {
@@ -1074,8 +1080,14 @@ function downloadBrochure(side) {
 function loadBrochures() {
     const front = localStorage.getItem('aht_brochure_front');
     const back = localStorage.getItem('aht_brochure_back');
-    if (front) displayBrochure('front', front);
-    if (back) displayBrochure('back', back);
+    if (front) {
+        displayBrochure('front', front);
+        displayAdminBrochure('front', front);
+    }
+    if (back) {
+        displayBrochure('back', back);
+        displayAdminBrochure('back', back);
+    }
 }
 
 function updateBrochureVisibility() {
