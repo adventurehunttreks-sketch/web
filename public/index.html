@@ -1256,23 +1256,15 @@
                 <div class="chat-msg bot">
                     <div class="chat-msg-avatar"><i class="fas fa-robot"></i></div>
                     <div class="chat-msg-bubble">
-                        <p>Welcome to Adventure Hunt Treks! I can help you with:</p>
-                        <ul>
-                            <li>Tour packages & pricing</li>
-                            <li>Trek information</li>
-                            <li>Booking assistance</li>
-                            <li>Travel tips for Nepal</li>
-                        </ul>
-                        <p>How can I help you today?</p>
+                        <p>Namaste! Welcome to Adventure Hunt Treks!</p>
+                        <p>Are you visiting from <strong>Nepal</strong> or are you an <strong>International</strong> traveler?</p>
+                        <p><em>This helps me show you the right packages and prices.</em></p>
                     </div>
                 </div>
             </div>
             <div class="chatbot-quick-actions">
-                <button onclick="sendChatQuick('What packages do you offer?')">Packages</button>
-                <button onclick="sendChatQuick('Tell me about Chitwan tours')">Chitwan</button>
-                <button onclick="sendChatQuick('What treks are available?')">Trekking</button>
-                <button onclick="sendChatQuick('How to book?')">Booking</button>
-                <button onclick="sendChatQuick('Contact information')">Contact</button>
+                <button onclick="sendChatQuick('I am Nepali')">Nepali</button>
+                <button onclick="sendChatQuick('I am International')">International</button>
             </div>
             <div class="chatbot-input-area">
                 <input type="text" id="chatbotInput" placeholder="Type your message..." onkeydown="if(event.key==='Enter') sendChatMessage()">

@@ -1869,6 +1869,28 @@ function sendChatQuick(text) {
     }, 600 + Math.random() * 800);
 }
 
+function updateChatQuickActions(isForeigner) {
+    const qa = document.querySelector('.chatbot-quick-actions');
+    if (!qa) return;
+    if (isForeigner) {
+        qa.innerHTML = `
+            <button onclick="sendChatQuick('What treks are available?')">All Treks</button>
+            <button onclick="sendChatQuick('Annapurna region')">Annapurna</button>
+            <button onclick="sendChatQuick('Langtang region')">Langtang</button>
+            <button onclick="sendChatQuick('Everest base camp')">Everest</button>
+            <button onclick="sendChatQuick('Manaslu circuit')">Manaslu</button>
+            <button onclick="sendChatQuick('How to book?')">Booking</button>
+            <button onclick="sendChatQuick('Contact information')">Contact</button>`;
+    } else {
+        qa.innerHTML = `
+            <button onclick="sendChatQuick('What packages do you offer?')">Packages</button>
+            <button onclick="sendChatQuick('Tell me about Chitwan tours')">Chitwan</button>
+            <button onclick="sendChatQuick('What treks are available?')">Trekking</button>
+            <button onclick="sendChatQuick('How to book?')">Booking</button>
+            <button onclick="sendChatQuick('Contact information')">Contact</button>`;
+    }
+}
+
 function getChatReply(input) {
     const msg = input.toLowerCase();
     const pkgs = getPackages();
@@ -1879,6 +1901,23 @@ function getChatReply(input) {
     const nepaliPkgs = Object.entries(pkgs).filter(([id, p]) => (packageAudience[id] || 'both') !== 'foreigner');
     const foreignPkgs = Object.entries(pkgs).filter(([id, p]) => (packageAudience[id] || 'both') !== 'nepali');
     const activePkgs = isForeign ? foreignPkgs : nepaliPkgs;
+
+    if (msg.match(/\b(i am nepali|nepali|from nepal|local)\b/)) {
+        userOrigin = 'nepal';
+        sessionStorage.setItem('userOrigin', 'nepal');
+        updateChatQuickActions(false);
+        renderDynamicPackages();
+        updatePriceDisplay();
+        return 'Great! You\'re from Nepal. I\'ll show you our <strong>Nepali packages</strong> with NPR prices.<br><br>We have <strong>24 packages</strong> across Chitwan, Pokhara, Kathmandu, Lumbini & trekking routes.<br><br>What would you like to know about?';
+    }
+    if (msg.match(/\b(i am international|international|foreign|from abroad|tourist)\b/)) {
+        userOrigin = 'foreign';
+        sessionStorage.setItem('userOrigin', 'foreign');
+        updateChatQuickActions(true);
+        renderDynamicPackages();
+        updatePriceDisplay();
+        return 'Welcome, international traveler! I\'ll show you our <strong>international trek packages</strong> with USD prices.<br><br>We have <strong>12 treks</strong> across Annapurna, Langtang, Everest & Manaslu regions.<br><br>Which region interests you?';
+    }
 
     if (msg.match(/\b(hi|hello|hey|namaste|greetings)\b/)) {
         return isForeign
