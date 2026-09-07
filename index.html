@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+i<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,6 +21,7 @@
                 <li><a href="#packages">Packages</a></li>
                 <li><a href="#destinations">Destinations</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="showAdminLogin(); return false;" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -514,7 +515,7 @@
                 </div>
 
                 <!-- Upper Mustang -->
-                <div class="package-card" data-category="adventure">
+                <div class="package-card" data-category="trek">
                     <div class="package-image" style="background: url('mustang.png') center/cover;">
                         <div class="package-overlay"></div>
                         <div class="package-badge">Restricted</div>
@@ -523,20 +524,20 @@
                         </button>
                     </div>
                     <div class="package-content">
-                        <h3>Upper Mustang Tour</h3>
+                        <h3>Upper Mustang Trek</h3>
                         <div class="package-details">
-                            <span><i class="fas fa-clock"></i> 4N / 5D</span>
+                            <span><i class="fas fa-clock"></i> 12N / 13D</span>
                             <span><i class="fas fa-users"></i> 2+ People</span>
                         </div>
                         <ul class="package-features">
                             <li><i class="fas fa-check"></i> Restricted Area Permit</li>
-                            <li><i class="fas fa-check"></i> Lo Manthang</li>
-                            <li><i class="fas fa-check"></i> Muktinath Darshan</li>
-                            <li><i class="fas fa-check"></i> 4WD Jeep Adventure</li>
+                            <li><i class="fas fa-check"></i> Ancient Monasteries</li>
+                            <li><i class="fas fa-check"></i> Desert Landscapes</li>
+                            <li><i class="fas fa-check"></i> Local Guide</li>
                         </ul>
                         <div class="package-price">
-                            <span class="price npr-price">NPR 35,000</span>
-                            <span class="price usd-price" style="display:none;">$270</span>
+                            <span class="price npr-price">NPR 85,000</span>
+                            <span class="price usd-price" style="display:none;">$650</span>
                             <span class="per-person">per person</span>
                         </div>
                         <button class="btn btn-primary btn-block book-btn">Book Now</button>
@@ -651,30 +652,17 @@
                             <select id="package">
                                 <option value="">Select a package</option>
                                 <option value="chitwan-adventure">Chitwan Adventure Tour</option>
-                                <option value="chitwan-wildlife">Chitwan Wildlife Tour (1N/2D)</option>
-                                <option value="chitwan-adventure">Chitwan & CG Dham Tour (2N/3D)</option>
-                                <option value="chitwan-lumbini">Pokhara, Lumbini & Chitwan (4N/5D)</option>
-                                <option value="janakpur-chitwan">Janakpur & Chitwan Tour (2N/3D)</option>
-                                <option value="lumbini-chitwan">Lumbini & Chitwan Tour (2N/3D)</option>
-                                <option value="pokhara-ghandruk">Pokhara Ghandruk Tour (2N/3D)</option>
-                                <option value="sikles">Sikles Village Trek (3N/4D)</option>
-                                <option value="chitlang">Chitlang Village Tour (1N/2D)</option>
-                                <option value="suping-chitlang">Suping Chitlang Tour (2N/3D)</option>
-                                <option value="kathmandu-heritage">Sailung Kalinchowk Tour (2N/3D)</option>
-                                <option value="annapurna">Annapurna Base Camp (6N/7D)</option>
-                                <option value="poonhill">Ghorepani Poonhill Trek (4N/5D)</option>
-                                <option value="poonhill-ghandruk">Poonhill Ghandruk Trek (5N/6D)</option>
-                                <option value="dhampus">Dhampus Australian Camp (2N/3D)</option>
-                                <option value="australian-camp">Australian Camp Trek (3N/4D)</option>
-                                <option value="ghandruk">Ghandruk Village Trek (3N/4D)</option>
-                                <option value="manang">Manang Tour (3N/4D)</option>
-                                <option value="manang-extended">Manang Extended Tour (4N/5D)</option>
-                                <option value="muktinath">Muktinath Tour (3N/4D)</option>
-                                <option value="muktinath-extended">Muktinath Pilgrimage (4N/5D)</option>
-                                <option value="pathibhara">Pathibhara Pilgrimage (5N/6D)</option>
-                                <option value="rara-lake">Rara Lake Tour (6N/7D)</option>
-                                <option value="mustang">Upper Mustang Tour (4N/5D)</option>
-                                <option value="mustang-extended">Upper Mustang Extended (5N/6D)</option>
+                                <option value="chitwan-wildlife">Chitwan Wildlife Tour</option>
+                                <option value="jungle-safari">Jungle Safari Tour</option>
+                                <option value="chitwan-lumbini">Chitwan Lumbini Tour</option>
+                                <option value="pokhara">Pokhara Adventure</option>
+                                <option value="kathmandu">Kathmandu Heritage Tour</option>
+                                <option value="lumbini">Lumbini Tour</option>
+                                <option value="muktinath">Muktinath Pilgrimage</option>
+                                <option value="poonhill">Poon Hill Trek</option>
+                                <option value="langtang">Langtang Valley Trek</option>
+                                <option value="annapurna">Annapurna Base Camp</option>
+                                <option value="mustang">Upper Mustang Trek</option>
                                 <option value="custom">Customized Tour</option>
                             </select>
                         </div>
@@ -754,6 +742,7 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#packages">Packages</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li><a href="#" onclick="showAdminLogin(); return false;">Admin Panel</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -776,7 +765,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p id="footerCopyright" style="cursor:default; user-select:none;">&copy; 2026 Adventure Hunt Treks Pvt. Ltd. All Rights Reserved.</p>
+                <p>&copy; 2026 Adventure Hunt Treks Pvt. Ltd. All Rights Reserved.</p>
                 <p>Suryabinayak, Bhaktapur, Nepal | +977-9851134076 | adventurehunttreks@gmail.com</p>
             </div>
         </div>
@@ -909,9 +898,6 @@
                 </button>
                 <button class="admin-nav-btn" data-section="chatlogs" onclick="switchAdminSection('chatlogs')">
                     <i class="fas fa-comments"></i> Chat Logs
-                </button>
-                <button class="admin-nav-btn" data-section="sendemail" onclick="switchAdminSection('sendemail')">
-                    <i class="fas fa-paper-plane"></i> Send Email
                 </button>
             </nav>
             <div class="admin-sidebar-footer">
@@ -1108,31 +1094,6 @@
                     </div>
                 </div>
                 <div id="chatLogsList" class="admin-list"></div>
-            </div>
-
-            <!-- Send Email Section -->
-            <div class="admin-section" id="section-sendemail">
-                <div class="section-toolbar">
-                    <h3><i class="fas fa-paper-plane"></i> Send Email</h3>
-                </div>
-                <div class="send-email-form">
-                    <div class="form-group">
-                        <label>To (Email Address) *</label>
-                        <input type="email" id="sendEmailTo" placeholder="customer@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Subject *</label>
-                        <input type="text" id="sendEmailSubject" placeholder="Email subject">
-                    </div>
-                    <div class="form-group">
-                        <label>Message *</label>
-                        <textarea id="sendEmailMessage" rows="10" placeholder="Type your message here..."></textarea>
-                    </div>
-                    <button class="btn btn-primary" onclick="sendEmailFromAdmin()">
-                        <i class="fas fa-paper-plane"></i> Send Email
-                    </button>
-                    <div id="emailStatus" class="email-status"></div>
-                </div>
             </div>
         </div>
     </div>

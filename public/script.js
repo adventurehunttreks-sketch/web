@@ -69,7 +69,7 @@ const defaultPackages = {
     // === POKHARA TOURS ===
     'pokhara-ghandruk': {
         name: 'Pokhara Ghandruk Tour', duration: '2N / 3D', priceNPR: '8,500', priceUSD: '65',
-        category: 'trek', image: 'ghandruk-village.png', badge: 'Quick Trek',
+        category: 'pokhara', image: 'ghandruk-village.png', badge: 'Quick Trek',
         shortDesc: 'Quick trip combining Pokhara sightseeing with a trek to Ghandruk village — the most visited village in Nepal with stunning Himalayan views and Gurung cultural immersion.',
         highlights: ['Ghandruk Village', 'Pokhara Sightseeing', 'Campfire & Music', 'Boating to Tal Barahi', 'All Meals'],
         itinerary: [
@@ -81,7 +81,7 @@ const defaultPackages = {
     },
     'sikles': {
         name: 'Sikles Village Trek', duration: '3N / 4D', priceNPR: '12,000', priceUSD: '92',
-        category: 'trek', image: 'ghandruk-trek.jpg', badge: 'Gurung Village',
+        category: 'pokhara', image: 'ghandruk-trek.jpg', badge: 'Gurung Village',
         shortDesc: 'Trek to traditional Gurung village of Sikles (2,000m) — one of the largest Gurung settlements in Nepal. Stunning views of Annapurna and Manaslu ranges, well-preserved traditional architecture.',
         highlights: ['Sikles Village', 'Gurung Culture', 'Annapurna Views', 'Traditional Architecture', 'Campfire'],
         itinerary: [
@@ -177,7 +177,7 @@ const defaultPackages = {
     },
     'dhampus': {
         name: 'Dhampus Australian Camp Trek', duration: '2N / 3D', priceNPR: '8,500', priceUSD: '65',
-        category: 'trek', image: 'dhampus.jpg', badge: 'Easy Trek',
+        category: 'pokhara', image: 'dhampus.jpg', badge: 'Easy Trek',
         shortDesc: 'Short trek to Dhampus village and Australian Camp — the most beautiful and popular village near Pokhara for easy trekking with spectacular Annapurna views and authentic Gurung culture.',
         highlights: ['Dhampus Village', 'Australian Camp Hike', 'Annapurna Views', 'Gurung Culture', 'Easy Trail'],
         itinerary: [
@@ -189,7 +189,7 @@ const defaultPackages = {
     },
     'australian-camp': {
         name: 'Australian Camp Trek', duration: '3N / 4D', priceNPR: '12,000', priceUSD: '92',
-        category: 'trek', image: 'dhampus.jpg', badge: 'Mountain Camp',
+        category: 'pokhara', image: 'dhampus.jpg', badge: 'Mountain Camp',
         shortDesc: 'Easy trek from Dhampus to Australian Camp with stunning views of Annapurna South, Hiunchuli, Machhapuchhre, and Lamjung Himal. Perfect for experiencing Nepal\'s mountain scenery.',
         highlights: ['Australian Camp (2,065m)', 'Annapurna Views', 'Campfire & Music', 'Pokhara Sightseeing', 'Easy Trek'],
         itinerary: [
@@ -242,7 +242,7 @@ const defaultPackages = {
     },
     'muktinath': {
         name: 'Muktinath Tour', duration: '3N / 4D', priceNPR: '10,000', priceUSD: '77',
-        category: 'trek', image: 'muktinath-temple.png', badge: 'Pilgrimage',
+        category: 'heritage', image: 'muktinath-temple.png', badge: 'Pilgrimage',
         shortDesc: 'Quick pilgrimage to Muktinath Temple via Galeshwor — visit Baglung Kalika Temple, Golden Bridge, Rupse Jharana waterfall, Jomsom, and Kagbeni. Both Hindu and Buddhist pilgrimage site.',
         highlights: ['Muktinath Temple', 'Baglung Kalika Temple', 'Rupse Jharana', 'Jomsom & Kagbeni', 'Pokhara Sightseeing'],
         itinerary: [
@@ -255,7 +255,7 @@ const defaultPackages = {
     },
     'muktinath-extended': {
         name: 'Muktinath Pilgrimage Tour', duration: '4N / 5D', priceNPR: '15,000', priceUSD: '115',
-        category: 'trek', image: 'muktinath-temple.png', badge: 'Pilgrimage',
+        category: 'heritage', image: 'muktinath-temple.png', badge: 'Pilgrimage',
         shortDesc: 'Sacred pilgrimage to Muktinath Temple (3,800m) through the deepest gorge in the world — Kali Gandaki corridor between Dhaulagiri and Annapurna. Visit Tatopani hot springs, Marpha village, Kagbeni.',
         highlights: ['Muktinath Temple (3,800m)', 'Kali Gandaki Gorge', 'Tatopani Hot Springs', 'Marpha Village', 'Pokhara Sightseeing'],
         itinerary: [
@@ -799,7 +799,7 @@ function getAdminDestinations() {
 function saveAdminDestinations(dests) { _adminCache.destinations = dests; _debouncedSave('aht_admin_destinations', dests, 200); }
 
 // ===== INITIALIZATION =====
-const DATA_VERSION = '4.0';
+const DATA_VERSION = '5.0';
 document.addEventListener('DOMContentLoaded', function() {
     // Clear cache if version changed
     const savedVersion = localStorage.getItem('aht_version');
