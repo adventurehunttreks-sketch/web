@@ -1873,40 +1873,114 @@ function getChatReply(input) {
     const msg = input.toLowerCase();
     const pkgs = getPackages();
     const s = getSettings();
+    const isForeign = userOrigin === 'foreign';
+    const price = (pkg) => isForeign ? `$${pkg.priceUSD}` : `NPR ${pkg.priceNPR}`;
+
+    const nepaliPkgs = Object.entries(pkgs).filter(([id, p]) => (packageAudience[id] || 'both') !== 'foreigner');
+    const foreignPkgs = Object.entries(pkgs).filter(([id, p]) => (packageAudience[id] || 'both') !== 'nepali');
+    const activePkgs = isForeign ? foreignPkgs : nepaliPkgs;
 
     if (msg.match(/\b(hi|hello|hey|namaste|greetings)\b/)) {
-        return 'Hello! Namaste! Welcome to Adventure Hunt Treks. How can I help you plan your Nepal adventure today?';
+        return isForeign
+            ? 'Hello! Welcome to Adventure Hunt Treks. We specialize in Nepal treks for international trekkers. How can I help you plan your adventure?'
+            : 'Hello! Namaste! Welcome to Adventure Hunt Treks. We have packages across Chitwan, Pokhara, Kathmandu, Lumbini & trekking routes. How can I help you?';
     }
     if (msg.match(/\b(package|offer|available|tour|all)\b/) && msg.match(/\b(package|offer|tour|all|what)\b/)) {
-        const cats = {};
-        Object.values(pkgs).forEach(p => { cats[p.category] = (cats[p.category] || 0) + 1; });
-        let list = 'We have <strong>' + Object.keys(pkgs).length + '</strong> packages across these categories:<br>';
-        Object.entries(cats).forEach(([cat, count]) => {
-            list += `<br>&#8226; <strong>${cat.charAt(0).toUpperCase() + cat.slice(1)}</strong> — ${count} packages`;
-        });
-        list += '<br><br>Prices start from <strong>NPR 7,500</strong> per person. Would you like details on any specific category?';
-        return list;
+        if (isForeign) {
+            let list = 'We have <strong>12 international trek packages</strong> across these regions:<br>';
+            list += '<br>&#8226; <strong>Annapurna</strong> — Annapurna Circuit (23D), Mardi Himal (8D), Nar Phu Valley (16D)';
+            list += '<br>&#8226; <strong>Langtang</strong> — Langtang Valley (11D), Tamang Heritage (9D), Langtang Circuit (21D), Gosaikunda (11D), Helambu (11D)';
+            list += '<br>&#8226; <strong>Everest</strong> — Everest Base Camp (16D)';
+            list += '<br>&#8226; <strong>Manaslu</strong> — Manaslu Circuit (19D), Tsum Valley (14D & 21D)';
+            list += '<br><br>Prices range from <strong>$290 to $845</strong> per person. Which region interests you?';
+            return list;
+        } else {
+            let list = 'We have <strong>24 Nepal packages</strong> across these categories:<br>';
+            list += '<br>&#8226; <strong>Chitwan</strong> — Wildlife safari, cultural tours';
+            list += '<br>&#8226; <strong>Pokhara</strong> — Sightseeing, Ghandruk, treks';
+            list += '<br>&#8226; <strong>Heritage</strong> — Kathmandu, Lumbini, Muktinath';
+            list += '<br>&#8226; <strong>Trekking</strong> — Poon Hill, Annapurna, Langtang';
+            list += '<br>&#8226; <strong>Adventure</strong> — Rafting, paragliding, bungee';
+            list += '<br><br>Prices range from <strong>NPR 6,500 to NPR 40,000</strong> per person. Which category interests you?';
+            return list;
+        }
     }
     if (msg.match(/\b(chitwan)\b/)) {
-        return 'Chitwan is our most popular destination! We have <strong>5 Chitwan packages</strong> starting from <strong>NPR 6,500 ($50)</strong> per person.<br><br>Highlights include:<br>&#8226; Jeep Safari through Community Forest<br>&#8226; Elephant Breeding Center<br>&#8226; Tharu Cultural Dance Show<br>&#8226; CG Dham Temple Visit<br><br>Durations: 1N/2D to 4N/5D. Would you like to know about a specific Chitwan tour?';
+        return 'Chitwan is our most popular destination! We have <strong>5 Chitwan packages</strong> starting from <strong>NPR 6,500</strong> per person.<br><br>Highlights include:<br>&#8226; Jeep Safari through Community Forest<br>&#8226; Elephant Breeding Center<br>&#8226; Tharu Cultural Dance Show<br>&#8226; CG Dham Temple Visit<br><br>Durations: 1N/2D to 4N/5D. Would you like to know about a specific Chitwan tour?';
     }
     if (msg.match(/\b(pokhara)\b/)) {
-        return 'Pokhara is the gateway to the Annapurna region! We offer <strong>3 Pokhara packages</strong> including sightseeing, paragliding, and boating on Phewa Lake.<br><br>Highlights:<br>&#8226; Sarangkot sunrise view<br>&#8226; World Peace Pagoda<br>&#8226; Phewa Lake boating<br>&#8226; Davis Falls & Gupteshwor Cave<br><br>Would you like details on a specific Pokhara tour?';
+        return 'Pokhara is the gateway to the Annapurna region! We offer <strong>Pokhara packages</strong> including sightseeing, paragliding, and boating on Phewa Lake.<br><br>Highlights:<br>&#8226; Sarangkot sunrise view<br>&#8226; World Peace Pagoda<br>&#8226; Phewa Lake boating<br>&#8226; Davis Falls & Gupteshwor Cave<br><br>Would you like details on a specific Pokhara tour?';
     }
-    if (msg.match(/\b(trek|trekking|hike|hiking|poon hill|annapurna|langtang|mustang|base camp|abc)\b/)) {
+    if (msg.match(/\b(annapurna|annapurna circuit|annapurna base camp|abc)\b/)) {
+        if (isForeign) {
+            const ac = pkgs['annapurna-circuit-23d'];
+            const mh = pkgs['mardi-himal'];
+            const np = pkgs['nar-phu-valley-16d'];
+            return `We have <strong>3 Annapurna treks</strong> for international trekkers:<br><br>&#8226; <strong>Annapurna Circuit</strong> (23D) — ${price(ac)} — Cross Thorong La Pass (5,416m), Muktinath Temple, Poon Hill<br>&#8226; <strong>Mardi Himal</strong> (${mh.duration}) — ${price(mh)} — Off-beaten-path, Machhapuchhre views<br>&#8226; <strong>Nar Phu Valley</strong> (${np.duration}) — ${price(np)} — Restricted area, hidden valleys<br><br>All include guide, meals, accommodation & permits. Which one interests you?`;
+        }
+        return 'We have Annapurna region packages! Popular ones:<br><br>&#8226; <strong>Annapurna Base Camp</strong> (6N/7D) — NPR 25,000<br>&#8226; <strong>Ghorepani Poonhill Trek</strong> (4N/5D) — NPR 15,000<br>&#8226; <strong>Manang Tour</strong> (3N/4D) — NPR 15,000<br><br>Which trek interests you?';
+    }
+    if (msg.match(/\b(langtang|langtang valley|langtang circuit|tamang heritage)\b/)) {
+        if (isForeign) {
+            const lv = pkgs['langtang-valley-10d'];
+            const th = pkgs['langtang-tamang-heritage-9d'];
+            const lc = pkgs['langtang-circuit-20d'];
+            const lg = pkgs['langtang-gosaikunda-10d'];
+            const hb = pkgs['helambu-10d'];
+            return `We have <strong>5 Langtang region treks</strong>:<br><br>&#8226; <strong>Langtang Valley</strong> (${lv.duration}) — ${price(lv)} — Glacier Valley, Tserko Ri, Kyanjin Gompa<br>&#8226; <strong>Tamang Heritage</strong> (${th.duration}) — ${price(th)} — Cultural homestay, hot springs<br>&#8226; <strong>Langtang Circuit</strong> (${lc.duration}) — ${price(lc)} — Full circuit: Tamang + Valley + Gosaikunda + Helambu<br>&#8226; <strong>Langtang & Gosaikunda</strong> (${lg.duration}) — ${price(lg)} — Sacred Lake + Valley<br>&#8226; <strong>Helambu</strong> (${hb.duration}) — ${price(hb)} — Easy, near Kathmandu<br><br>Which one interests you?`;
+        }
+        return 'Langtang is a fantastic trekking region near Kathmandu! We have:<br><br>&#8226; <strong>Langtang Valley Trek</strong> — Stunning glacier views<br>&#8226; <strong>Gosaikunda Lake</strong> — Sacred alpine lake<br><br>Great alternative to Annapurna with fewer crowds. Want more details?';
+    }
+    if (msg.match(/\b(everest|base camp|ebc|khumbu|lukla)\b/)) {
+        if (isForeign) {
+            const ebc = pkgs['everest-base-camp'];
+            return `<strong>Everest Base Camp Trek</strong> (${ebc.duration}) — ${price(ebc)}<br><br>The iconic trek to the base of the world's highest mountain:<br>&#8226; Fly to Lukla<br>&#8226; Trek through Sherpa villages<br>&#8226; Tengboche Monastery<br>&#8226; Kala Patthar (5,545m) for Everest sunrise<br>&#8226; Stand at Everest Base Camp (5,364m)<br><br>Includes guide, meals, accommodation & permits. Shall I provide the full itinerary?`;
+        }
+        return 'We offer Everest Base Camp trek for experienced trekkers! It\'s a challenging but unforgettable journey to the base of the world\'s highest peak. Would you like details?';
+    }
+    if (msg.match(/\b(manaslu|manaslu circuit|tsum valley|larkya)\b/)) {
+        if (isForeign) {
+            const mc = pkgs['manaslu-circuit-18d'];
+            const mv = pkgs['manaslu-tsum-valley-20d'];
+            const tv = pkgs['tsum-valley'];
+            return `We have <strong>3 Manaslu region treks</strong>:<br><br>&#8226; <strong>Manaslu Circuit</strong> (${mc.duration}) — ${price(mc)} — Circle the 8th highest mountain, cross Larkya La (5,135m)<br>&#8226; <strong>Manaslu & Tsum Valley</strong> (${mv.duration}) — ${price(mv)} — Circuit + hidden Tsum Valley<br>&#8226; <strong>Tsum Valley</strong> (${tv.duration}) — ${price(tv)} — Sacred Himalayan pilgrimage valley<br><br>Restricted area permits required — we handle everything. Which one?`;
+        }
+        return 'Manaslu Circuit is an incredible off-the-beaten-path trek! It circles the world\'s 8th highest mountain through remote villages and stunning landscapes. Would you like details?';
+    }
+    if (msg.match(/\b(trek|trekking|hike|hiking|poon hill|guri)\b/)) {
+        if (isForeign) {
+            let list = 'Our international trek packages:<br><br>';
+            foreignPkgs.forEach(([id, p]) => {
+                list += `&#8226; <strong>${p.name}</strong> (${p.duration}) — ${price(p)}<br>`;
+            });
+            list += '<br>All treks include experienced guide, meals, accommodation & transport. Which region interests you?';
+            return list;
+        }
         return 'We have <strong>amazing trekking packages</strong> for all levels:<br><br>&#8226; <strong>Ghorepani Poonhill Trek</strong> (4N/5D) — NPR 15,000<br>&#8226; <strong>Annapurna Base Camp</strong> (6N/7D) — NPR 25,000<br>&#8226; <strong>Ghandruk Village Trek</strong> (3N/4D) — NPR 10,000<br>&#8226; <strong>Manang Tour</strong> (3N/4D) — NPR 15,000<br>&#8226; <strong>Muktinath Tour</strong> (3N/4D) — NPR 10,000<br><br>All treks include guide, meals, accommodation & transport. Which trek interests you?';
+    }
+    if (msg.match(/\b(region|where|location|area)\b/) && isForeign) {
+        return 'Our international treks cover <strong>4 major regions</strong>:<br><br>&#8226; <strong>Annapurna</strong> — Classic circuit, Mardi Himal, Nar Phu Valley<br>&#8226; <strong>Langtang</strong> — Valley, Tamang Heritage, Circuit, Gosaikunda, Helambu<br>&#8226; <strong>Everest</strong> — Base Camp trek<br>&#8226; <strong>Manaslu</strong> — Circuit, Tsum Valley<br><br>Each region offers unique landscapes and cultures. Which one interests you?';
     }
     if (msg.match(/\b(booking|book|reserve|inquiry|how to book|process)\b/)) {
         return 'Booking is easy! Here\'s how:<br><br>1. Choose your package from our <a href="#packages">Packages section</a><br>2. Click "Book Now" or "View Itinerary" then "Book This Tour"<br>3. Fill in your contact details<br>4. Our team will confirm within <strong>24 hours</strong><br><br>You can also call us directly at <strong>+977-9851134076</strong> or email <strong>adventurehunttreks@gmail.com</strong>';
     }
-    if (msg.match(/\b(price|cost|expensive|cheap|budget|rate|npr|usd)\b/)) {
+    if (msg.match(/\b(price|cost|expensive|cheap|budget|rate|npr|usd|dollar)\b/)) {
+        if (isForeign) {
+            const sorted = Object.values(pkgs).filter(p => (p.priceUSD)).sort((a, b) => parseInt(a.priceUSD) - parseInt(b.priceUSD));
+            const cheapest = sorted[0];
+            const priciest = sorted[sorted.length - 1];
+            return `International trek prices range from <strong>$${cheapest.priceUSD}</strong> to <strong>$${priciest.priceUSD}</strong> per person.<br><br>Cheapest: <strong>${cheapest.name}</strong> at $${cheapest.priceUSD}<br>Most premium: <strong>${priciest.name}</strong> at $${priciest.priceUSD}<br><br>Prices include accommodation, meals, guide, permits & transport. Group discounts available!`;
+        }
         const cheapest = Object.values(pkgs).sort((a, b) => parseInt(a.priceNPR.replace(/,/g, '')) - parseInt(b.priceNPR.replace(/,/g, '')))[0];
-        return `Our packages range from <strong>NPR 7,500 to NPR 95,000</strong> per person.<br><br>The most affordable is <strong>${cheapest.name}</strong> at NPR ${cheapest.priceNPR} ($${cheapest.priceUSD}).<br><br>We offer flexible payment plans and group discounts. Prices include accommodation, meals, guide, and transport as specified in each package.`;
+        return `Our packages range from <strong>NPR 6,500 to NPR 40,000</strong> per person.<br><br>The most affordable is <strong>${cheapest.name}</strong> at NPR ${cheapest.priceNPR}.<br><br>We offer flexible payment plans and group discounts. Prices include accommodation, meals, guide, and transport as specified in each package.`;
     }
     if (msg.match(/\b(contact|phone|email|address|call|reach|whatsapp|location)\b/)) {
         return `<strong>Contact Information:</strong><br><br><i class="fas fa-phone"></i> Phone: <strong>${s.phone}</strong><br><i class="fas fa-envelope"></i> Email: <strong>${s.email}</strong><br><i class="fas fa-map-marker-alt"></i> Address: <strong>${s.address}</strong><br><i class="fas fa-clock"></i> Hours: Sun-Fri 9AM-6PM<br><br>We respond within 24 hours!`;
     }
     if (msg.match(/\b(best|recommend|suggest|popular|top|favorite)\b/)) {
+        if (isForeign) {
+            return 'Our <strong>most popular international treks</strong> are:<br><br>&#8226; <strong>Annapurna Circuit</strong> (23D) — $650 — The classic Himalayan trek<br>&#8226; <strong>Everest Base Camp</strong> (16D) — $595 — Iconic Everest experience<br>&#8226; <strong>Langtang Valley</strong> (11D) — $420 — No flight needed, glacier views<br>&#8226; <strong>Manaslu Circuit</strong> (19D) — $730 — Remote & pristine<br><br>All include guide, meals, accommodation & permits. Which one interests you?';
+        }
         return 'Our <strong>most popular packages</strong> are:<br><br>&#8226; <strong>Chitwan & CG Dham Tour</strong> (2N/3D) — NPR 9,500<br>&#8226; <strong>Ghandruk Village Trek</strong> (3N/4D) — NPR 10,000<br>&#8226; <strong>Annapurna Base Camp</strong> (6N/7D) — NPR 25,000<br><br>Would you like details on any of these?';
     }
     if (msg.match(/\b(safety|safe|secure|risk|insurance)\b/)) {
@@ -1916,6 +1990,9 @@ function getChatReply(input) {
         return 'You\'re welcome! Happy to help. If you have any more questions, just ask. We\'re here to make your Nepal trip unforgettable! <br><br>Ready to book? <a href="#packages">Browse our packages</a> or call us at <strong>+977-9851134076</strong>.';
     }
     if (msg.match(/\b(when|best time|season|month|weather|climate)\b/)) {
+        if (isForeign) {
+            return 'The <strong>best times for trekking in Nepal</strong>:<br><br>&#8226; <strong>Oct-Nov</strong> (Autumn): Best season — clear skies, amazing mountain views<br>&#8226; <strong>Mar-May</strong> (Spring): Rhododendrons bloom, warm temperatures<br>&#8226; <strong>Dec-Feb</strong> (Winter): Cold but fewer trekkers, clear mornings<br>&#8226; <strong>Jun-Sep</strong> (Monsoon): Lush green but rainy — not ideal for high passes<br><br>October and November are the peak trekking months. Which trek are you considering?';
+        }
         return 'The <strong>best times to visit Nepal</strong>:<br><br>&#8226; <strong>Oct-Nov</strong>: Best season — clear skies, great views<br>&#8226; <strong>Mar-May</strong>: Spring — rhododendrons bloom<br>&#8226; <strong>Jun-Sep</strong>: Monsoon — lush but rainy<br>&#8226; <strong>Dec-Feb</strong>: Winter — cold but fewer crowds<br><br>Trekking is best in Oct-Nov and Mar-May. Chitwan is great year-round.';
     }
     if (msg.match(/\b(group|family|couple|solo|friends)\b/)) {
@@ -1928,12 +2005,21 @@ function getChatReply(input) {
         return 'Great question! We offer:<br><br>&#8226; <strong>Group discount</strong>: 10% off for 5+ people<br>&#8226; <strong>Early bird</strong>: 5% off if booked 30+ days ahead<br>&#8226; <strong>Returning customer</strong>: 8% off<br>&#8226; <strong>Student discount</strong>: 10% off with valid ID<br><br>Contact us for custom group packages!';
     }
     if (msg.match(/\b(permit|visa|document|paper|id|passport)\b/)) {
-        return 'For Nepal travel you\'ll need:<br><br>&#8226; <strong>Visa</strong>: On-arrival visa available ($30 for 15 days, $50 for 30 days)<br>&#8226; <strong>Passport</strong>: Valid for 6+ months<br>&#8226; <strong>Trek permits</strong>: We arrange TIMS card & national park permits<br>&#8226; <strong>Photos</strong>: 2 passport-size photos<br><br>We handle all permit arrangements for you!';
+        if (isForeign) {
+            return 'For international trekkers you\'ll need:<br><br>&#8226; <strong>Visa</strong>: On-arrival visa at Kathmandu airport ($30 for 15 days, $50 for 30 days, $125 for 90 days)<br>&#8226; <strong>Passport</strong>: Valid for 6+ months<br>&#8226; <strong>Trek permits</strong>: We arrange ACAP, MCAP, TIMS & restricted area permits<br>&#8226; <strong>Photos</strong>: 2 passport-size photos<br><br>We handle all permit arrangements — you just need to bring your passport and photos!';
+        }
+        return 'For Nepal travel you\'ll need:<br><br>&#8226; <strong>Visa</strong>: On-arrival visa available (NPR 1,500 for 15 days, NPR 3,000 for 30 days)<br>&#8226; <strong>Passport</strong>: Valid for 6+ months<br>&#8226; <strong>Trek permits</strong>: We arrange TIMS card & national park permits<br>&#8226; <strong>Photos</strong>: 2 passport-size photos<br><br>We handle all permit arrangements for you!';
     }
     if (msg.match(/\b(guide|porter|staff|team|leader)\b/)) {
         return 'Our team is <strong>highly trained</strong>:<br><br>&#8226; <strong>Licensed guides</strong> — Fluent in English, trained in first aid<br>&#8226; <strong>Experienced porters</strong> — Strong and reliable<br>&#8226; <strong>Trip leaders</strong> — 10+ years experience<br>&#8226; All staff are <strong>government certified</strong><br><br>Guide and porter costs are included in package prices.';
     }
-    return 'I\'m not sure I understand that. I can help with:<br><br>&#8226; <strong>Packages</strong> — "What packages do you have?"<br>&#8226; <strong>Trekking</strong> — "Tell me about treks"<br>&#8226; <strong>Booking</strong> — "How do I book?"<br>&#8226; <strong>Pricing</strong> — "What are the prices?"<br>&#8226; <strong>Contact</strong> — "How to contact you?"<br>&#8226; <strong>Safety</strong> — "Is it safe?"<br><br>Or type your question and I\'ll do my best to help!';
+    if (msg.match(/\b(flight|lukla|domestic|airline)\b/) && isForeign) {
+        return 'For Everest region treks, we arrange the <strong>Lukla flight</strong> from Kathmandu (35 min scenic mountain flight). For other treks, we use tourist buses or private vehicles.<br><br>Flight costs are included in package prices where applicable. Weather can cause delays — we build buffer days into itineraries.';
+    }
+    if (msg.match(/\b(currency|exchange|pay|payment|cash|card)\b/) && isForeign) {
+        return 'Payment options:<br><br>&#8226; <strong>International transfer</strong>: Bank wire / Wise / Remitly<br>&#8226; <strong>Cash</strong>: Pay in USD or NPR on arrival<br>&#8226; <strong>Nepali ATMs</strong>: Available in Kathmandu & Pokhara<br><br>We accept USD and NPR. Exchange rate: ~1 USD = 133 NPR. A 30% deposit secures your booking.';
+    }
+    return 'I\'m not sure I understand that. I can help with:<br><br>&#8226; <strong>Packages</strong> — "What packages do you have?"<br>&#8226; <strong>Trekking</strong> — "Tell me about treks"<br>&#8226; <strong>Regions</strong> — "Which regions do you cover?"<br>&#8226; <strong>Booking</strong> — "How do I book?"<br>&#8226; <strong>Pricing</strong> — "What are the prices?"<br>&#8226; <strong>Permits</strong> — "What permits do I need?"<br>&#8226; <strong>Contact</strong> — "How to contact you?"<br>&#8226; <strong>Safety</strong> — "Is it safe?"<br><br>Or type your question and I\'ll do my best to help!';
 }
 
 // ===== ADMIN CHAT LOGS =====
